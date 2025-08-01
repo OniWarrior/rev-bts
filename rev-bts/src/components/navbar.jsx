@@ -16,6 +16,18 @@ const NavBar = () => {
         navigate('/');
     }
 
+    // handler func to go to signup page
+    const goSignup = () => {
+        navigate('/signup');
+    }
+
+    // handler func to go to login page
+    const goLogin = () => {
+        navigate('/login');
+    }
+
+
+
 
 
 

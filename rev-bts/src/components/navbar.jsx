@@ -26,6 +26,16 @@ const NavBar = () => {
         navigate('/login');
     }
 
+    return (
+        <div className="nav-container">
+            <nav className="nav-row">
+                <button className="btn-home" onClick={goHome}></button>
+                <button className="btn-login" onClick={goLogin}></button>
+                <button className="btn-signup" onClick={goSignup}></button>
+            </nav>
+        </div>
+    )
+
 
 
 

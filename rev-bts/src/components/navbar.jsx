@@ -6,6 +6,7 @@
  */
 import React from "react";
 import { useNavigate } from 'react-router-dom';
+import '../styles/nav-bar.css'
 
 const NavBar = () => {
     // hook for navigation 
@@ -29,9 +30,9 @@ const NavBar = () => {
     return (
         <div className="nav-container">
             <nav className="nav-row">
-                <button className="btn-home" onClick={goHome}></button>
-                <button className="btn-login" onClick={goLogin}></button>
-                <button className="btn-signup" onClick={goSignup}></button>
+                <div className="btn-home" onClick={goHome}></div>
+                <div className="btn-login" onClick={goLogin}></div>
+                <div className="btn-signup" onClick={goSignup}></div>
             </nav>
         </div>
     )

@@ -1,8 +1,67 @@
+
+/*
+ * Rule set for the home button.  
+*/
 .btn-home{
     background-image: url('../assets/home-icon.png');
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: scroll;
-    background-size: cover;
+    background-size:2em;
+    height:3em;
+    width:3em;
+    border-radius: 50%;
     
+    
+
+}
+
+/*
+ * Rule set for the signup button.
+*/
+.btn-signup{
+    background-image: url('../assets/signup-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size:2em;
+    height:3em;
+    width:3em;
+    border-radius: 50%;
+
+}
+
+
+/*
+ * Rule set for the login button.
+*/
+
+.btn-login{
+    background-image: url('../assets/login-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size:2em;
+    height:3em;
+    width:3em;
+    border-radius: 50%;
+}
+
+
+/*
+ * Rule set for reactivity of nav bar icons
+*/
+
+.nav-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 50%;
+    padding-left: 50%;
+}
+.nav-container{
+    background-color: black;
+    border-bottom: 2px solid rgba(255, 145, 0, 0.868);
+    box-sizing: border-box;
+    box-shadow: 0px 3px 4px rgba(255, 145, 0, 0.868) ;
 }

@@ -1,0 +1,138 @@
+
+/*
+ * Rule set for the home button.  
+*/
+.btn-home{
+    background-image: url('../assets/home-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size:2em;
+    height:3em;
+    width:3em;
+    border-radius: 50%;
+    
+    
+    
+
+}
+
+/*
+ * Rule set for the signup button.
+*/
+.btn-signup{
+    background-image: url('../assets/signup-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size:2em;
+    height:3em;
+    width:3em;
+    border-radius: 50%;
+
+}
+
+
+/*
+ * Rule set for the login button.
+*/
+
+.btn-login{
+    background-image: url('../assets/login-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size:2em;
+    height:3em;
+    width:3em;
+    border-radius: 50%;
+}
+
+
+/*
+ * Rule set for reactivity of nav bar icons
+*/
+
+.nav-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 50%;
+    padding-left: 50%;
+}
+
+/*
+ * Rule set for styling the nav bar itself
+*/
+.nav-container{
+    background-color: black;
+    border-bottom: 2px solid rgba(255, 145, 0, 0.868);
+    box-sizing: border-box;
+    box-shadow: 0px 3px 4px rgba(255, 145, 0, 0.868) ;
+}
+
+
+
+/*
+ * Animations applied to nav bar home icon
+*/
+
+.btn-home:hover{
+    animation: scale-up 0.4s forwards;
+
+}
+
+.btn-home:not(:hover){
+    animation: after-scale-up 0.4s  ease-out;
+
+}
+
+/*
+ * Animations applied to nav bar signup icon
+*/
+.btn-signup:hover{
+    animation: scale-up 0.4s forwards;
+
+}
+
+.btn-signup:not(:hover){
+    animation: after-scale-up 0.4s  ease-out;
+
+}
+
+/*
+ * Animations applied to nav bar login icon
+*/
+.btn-login:hover{
+    animation: scale-up 0.4s forwards;
+
+}
+
+.btn-login:not(:hover){
+    animation: after-scale-up 0.4s  ease-out;
+
+}
+
+/*
+ * Animation for nav bar icons
+*/
+@keyframes scale-up {
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform: scale(1.5);
+    }
+    
+}
+
+@keyframes after-scale-up {
+    from {
+        transform: scale(1.5);
+    }
+    to{
+        transform: scale(1);
+    }
+    
+}

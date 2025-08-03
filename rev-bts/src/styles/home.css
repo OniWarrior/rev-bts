@@ -1,3 +1,7 @@
+/*
+ * Rule set for the home container
+*/
+
 .home-container{
     background-image: url('../assets/bitcoin_hero.jpg');
     background-position: center;
@@ -5,4 +9,30 @@
     background-attachment: fixed;
     background-size: cover;
     height: 100vh;
+}
+
+/*
+ * Rule set for the title of the home page
+*/
+.home-header{
+    font-size: xx-large;
+    text-align: center;
+    padding-left: 30%;
+    color:white;
+    padding-top:2%;
+    font-family:monospace;
+}
+
+/*
+ * Rule set for the main section of text
+
+*/
+.main-text{
+    font-family: monospace;
+    text-align: center;
+    color:white;
+    padding-left:50%;
+    padding-top:1%;
+    width: 30%;
+    font-size: x-large;
 }

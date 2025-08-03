@@ -1,3 +1,10 @@
+/*
+ * Author: Stephen Aranda
+ * File  : home.jsx
+ * Desc  : Component for the home page/landing page.
+ */
+
+
 import React from "react";
 import '../styles/home.css'
 import NavBar from './navbar';

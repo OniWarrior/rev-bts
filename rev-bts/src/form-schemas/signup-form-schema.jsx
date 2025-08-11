@@ -5,7 +5,7 @@
  */
 
 import * as yup from "yup";
-import * as yup_phone from 'yup-phone-lite';
+
 
 const Signup_Form_Schema = yup.object().shape({
     first_name: yup.string()

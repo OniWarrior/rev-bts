@@ -7,10 +7,50 @@
 import React from "react";
 import NavBar from "./navbar";
 import '../styles/signup.css';
+import useFormValidation from "../hooks/useFormValidation";
+import { useState } from "react";
+import Signup_Form_Schema from "../form-schemas/signup-form-schema";
 
 const Signup = () => {
 
+    // object for initial values of text boxes
+    const initialValues = {
+        first_name: '',
+        last_name: '',
+        phone_num: '',
+        cell_num: '',
+        email: '',
+        city: '',
+        state: '',
+        street_addr: '',
+        zip_code: '',
+        password: ''
+    }
 
+    // object for the initial errors of the text boxes
+    const initialErrors = {
+        first_name: '',
+        last_name: '',
+        phone_num: '',
+        cell_num: '',
+        email: '',
+        city: '',
+        state: '',
+        street_addr: '',
+        zip_code: '',
+        password: ''
+    }
+
+
+
+    // local state vars for signup data and error
+    const [signup, errors, setSignup] = useFormValidation(Signup_Form_Schema, initialValues, initialErrors);
+
+
+    // handler for chaning input in text boxes
+    const change = (event) => {
+        setSignup(event, Signup_Form_Schema)
+    }
 
 
     return (
@@ -52,14 +92,14 @@ const Signup = () => {
                                     type="text"
                                     name="first_name"
                                     placeholder='first name'
-                                    required
+                                    onChange={change}
 
 
                                 />
 
 
                                 <div className='errors'>
-                                    <p></p>
+                                    <p>{errors.first_name}</p>
                                 </div>
 
 
@@ -68,13 +108,14 @@ const Signup = () => {
                                     type='text'
                                     name='last_name'
                                     placeholder='last name'
+                                    onChange={change}
 
                                 />
 
 
 
                                 <div className='errors'>
-                                    <p></p>
+                                    <p>{errors.last_name}</p>
                                 </div>
 
 
@@ -83,12 +124,12 @@ const Signup = () => {
                                     type='text'
                                     name='phone_num'
                                     placeholder='phone number'
-
+                                    onChange={change}
                                 />
 
 
                                 <div className='errors'>
-                                    <p></p>
+                                    <p>{errors.phone_num}</p>
                                 </div>
 
 
@@ -97,12 +138,12 @@ const Signup = () => {
                                     type='text'
                                     name='cell_num'
                                     placeholder='cell number'
-
+                                    onChange={change}
                                 />
 
 
                                 <div className='errors'>
-                                    <p></p>
+                                    <p>{errors.cell_num}</p>
                                 </div>
 
 
@@ -111,13 +152,13 @@ const Signup = () => {
                                     type='text'
                                     name='email'
                                     placeholder='email'
-
+                                    onChange={change}
                                 />
 
 
 
                                 <div className='errors'>
-                                    <p></p>
+                                    <p>{errors.email}</p>
                                 </div>
 
 
@@ -126,12 +167,12 @@ const Signup = () => {
                                     type='text'
                                     name='city'
                                     placeholder='city'
-
+                                    onChange={change}
                                 />
 
 
                                 <div className='errors'>
-                                    <p></p>
+                                    <p>{errors.city}</p>
                                 </div>
 
 
@@ -140,12 +181,12 @@ const Signup = () => {
                                     type='text'
                                     name='state'
                                     placeholder='state'
-
+                                    onChange={change}
                                 />
 
 
                                 <div className='errors'>
-                                    <p></p>
+                                    <p>{errors.state}</p>
                                 </div>
 
 
@@ -154,12 +195,12 @@ const Signup = () => {
                                     type='text'
                                     name='street_addr'
                                     placeholder='Street Address'
-
+                                    onChange={change}
                                 />
 
 
                                 <div className='errors'>
-                                    <p></p>
+                                    <p>{errors.street_addr}</p>
                                 </div>
 
 
@@ -168,22 +209,24 @@ const Signup = () => {
                                     type='text'
                                     name='zip_code'
                                     placeholder='zip code'
-
+                                    onChange={change}
                                 />
 
 
                                 <div className='errors'>
-                                    <p></p>
+                                    <p>{errors.zip_code}</p>
                                 </div>
 
                                 <input className="password-code-box"
                                     id='password'
-                                    type="password"
+                                    type="text"
                                     name="password"
-                                    placeholder="Password" />
+                                    placeholder="Password"
+                                    onChange={change}
+                                />
 
                                 <div className="errors">
-                                    <p></p>
+                                    <p>{errors.password}</p>
                                 </div>
 
 
@@ -202,7 +245,7 @@ const Signup = () => {
                                 type='radio'
                                 name='user_type'
                                 value='Client'
-
+                                onChange={change}
                             />
                         </label>
 
@@ -213,12 +256,12 @@ const Signup = () => {
                                 type='radio'
                                 name='user_type'
                                 value='Trader'
-
+                                onChange={change}
                             />
                         </label>
 
                         <div className='errors'>
-                            <p></p>
+                            <p>{errors.user_type}</p>
                         </div>
                         <br></br>
                         <button

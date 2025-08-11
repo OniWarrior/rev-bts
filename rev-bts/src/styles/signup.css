@@ -30,6 +30,7 @@
     margin-right: auto;
     justify-items: center;
     background-color: whitesmoke;
+    min-width: 25em;
     
 }
 
@@ -76,4 +77,17 @@
     flex-direction: column;
     justify-content: space-evenly;
     
+}
+
+
+.errors{
+    color:red;
+}
+
+.signup-submit{
+    width: 100px;
+    height:30px;
+    background-color: goldenrod;
+    color:white;
+    border-radius: 20px;
 }

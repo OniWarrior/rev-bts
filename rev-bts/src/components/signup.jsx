@@ -43,6 +43,8 @@ const Signup = () => {
                                     Street Addr: </label>
                                 <label className='label-input-group' htmlFor='zip_code'>
                                     Zip Code:</label>
+                                <label className="label-input-group" htmlFor="password">
+                                    Password:</label>
                             </div>
                             <div className="txt-box-group">
                                 <input className='first-name-box'
@@ -171,6 +173,16 @@ const Signup = () => {
 
 
                                 <div className='errors'>
+                                    <p></p>
+                                </div>
+
+                                <input className="password-code-box"
+                                    id='password'
+                                    type="password"
+                                    name="password"
+                                    placeholder="Password" />
+
+                                <div className="errors">
                                     <p></p>
                                 </div>
 

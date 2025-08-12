@@ -1,0 +1,94 @@
+/*
+ * Rule set for the image container within the form container of the signup component
+*/
+.login-img-container{
+    background-image: url("../assets/bitcoin_head_small.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    width:50%;
+    border-radius: 20px;
+}
+
+
+/*
+ * The rule set for the form container
+*/
+.login-form-container{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    border-radius: 20px;
+    border:1px solid gray;
+    height: 30em;
+    width: 60%;    
+    margin-top:5%;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    justify-items: center;
+    background-color: whitesmoke;
+    min-width: 25em;
+    
+}
+
+
+/*
+ * The rule set for the form that is in the form container-which is a box.
+*/
+.login-form{
+    
+    text-align: center;
+    width: 50%;
+    
+    
+}
+
+/*
+ * The rule set for the title of the component.
+*/
+.login-header{
+    padding-top:10%;
+    font-size: xx-large;
+    font-family: monospace;
+}
+
+
+.login-label-group{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: space-evenly;
+
+}
+
+.login-input-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-left:5em;
+    height: 60%;
+    width:60%;
+}
+
+.login-txt-box-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top:2.5em;
+    
+}
+
+
+.errors{
+    color:red;
+}
+
+.login-submit{
+    width: 100px;
+    height:30px;
+    background-color: goldenrod;
+    color:white;
+    border-radius: 20px;
+}

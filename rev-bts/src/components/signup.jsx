@@ -49,7 +49,7 @@ const Signup = () => {
 
     // handler for chaning input in text boxes
     const change = (event) => {
-        setSignup(event, Signup_Form_Schema)
+        setSignup(event, Signup_Form_Schema);
     }
 
 

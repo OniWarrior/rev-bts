@@ -34,6 +34,14 @@ const Login = () => {
     return (
         <div>
             <NavBar />
+            <div className="login-box">
+                <div className="login-form-container">
+                    <form className="login-form">
+                        <h2>Login</h2>
+                        <br />
+                    </form>
+                </div>
+            </div>
         </div>
     )
 }

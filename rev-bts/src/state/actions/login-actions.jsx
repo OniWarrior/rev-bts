@@ -9,9 +9,9 @@ import axios from "axios";
 
 // Strings that are dispatched to reducer function and redux logger
 // indicating start, success, failure of an action(api call).
-const LOGIN_START = "LOGIN_START";
-const LOGIN_FAILURE = "LOGIN_FAILURE";
-const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGIN_START = "LOGIN_START";
+export const LOGIN_FAILURE = "LOGIN_FAILURE";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 
 
 

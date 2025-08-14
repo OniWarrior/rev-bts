@@ -34,3 +34,4 @@ export const postRegisterAccount = (navigate, signup) => async (dispatch) => {
         dispatch({ type: SIGNUP_FAILURE, payload: error_message });
     }
 }
+

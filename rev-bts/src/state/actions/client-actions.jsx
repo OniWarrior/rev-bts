@@ -114,3 +114,32 @@ export const postSellBitcoin = (order, navigate) => async (dispatch) => {
         dispatch({ type: CLIENT_FAILURE, payload: error.message });
     }
 }
+
+
+// postMoneyTranser: api call to post a money transfer to client user type account-post a deposit
+// @transfer: parameter object for the transfer amount.
+// @navigate: paramter to navigate back to dashboard.
+// @dispatch: paramter to dispatch action types along with assigning payload.
+export const postMoneyTranser = (transfer, navigate) => async (dispatch) => {
+    // dispatch start of action
+    dispatch({ type: CLIENT_START });
+
+    try {
+
+        // make http request and save the response
+        const response = await AxiosWithAuth().post('/api/users/TransferMoney', transfer)
+
+        // dispatch success along with the payload
+        dispatch({ type: CLIENT_SUCCESS, payload: response.data });
+
+        // navigate back to client dashboard
+        navigate('/client-dashboard');
+
+        // show the confirmed money transfer
+        alert(response.data);
+
+    } catch (error) {
+        // dispatch failure along with failure message
+        dispatch({ type: CLIENT_FAILURE, payload: error.message });
+    }
+}

@@ -44,7 +44,7 @@ export const postLogin = (navigate, login) => async (dispatch) => {
     } catch (error) {
 
         // failure dispatch failure
-        dispatch({ type: LOGIN_FAILURE, payload: error.msg });
+        dispatch({ type: LOGIN_FAILURE, payload: error.message });
 
 
     }

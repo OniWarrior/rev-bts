@@ -18,7 +18,7 @@ export const getBitcoinWallet = (navigate) => async (dispatch) => {
     dispatch({ type: CLIENT_START });
     try {
         // make the api call and save the response
-        const response = await AxiosWithAuth().get("/api/users.BitcoinWallet");
+        const response = await AxiosWithAuth().get("/api/users/BitcoinWallet");
 
         // dispatch success and assign response data to payload
         dispatch({ type: CLIENT_SUCCESS, payload: response.data });
@@ -87,4 +87,30 @@ export const postBuyBitcoin = (order, navigate) => async (dispatch) => {
         dispatch({ type: CLIENT_FAILURE, payload: error.message });
     }
 
+}
+
+
+// postSellBitcoin: api call to post the selling of bitcoin for the client user type
+
+export const postSellBitcoin = (order, navigate) => async (dispatch) => {
+    // dispatch start of action
+    dispatch({ type: CLIENT_START });
+    try {
+
+        // make http request and save response
+        const response = await AxiosWithAuth().post("/api/users/SellBitCoin", order)
+
+        // dispatch success along with the payload
+        dispatch({ type: CLIENT_SUCCESS, payload: response.data });
+
+        // navigate back to dashboard
+        navigate('/client-dashboard');
+
+        // show the sold bitcoin
+        alert(response.data);
+
+    } catch (error) {
+        //dispatch failure along with failure message
+        dispatch({ type: CLIENT_FAILURE, payload: error.message });
+    }
 }

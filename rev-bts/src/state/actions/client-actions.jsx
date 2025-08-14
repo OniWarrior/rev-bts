@@ -34,10 +34,10 @@ export const getBitcoinWallet = (navigate) => async (dispatch) => {
 
 
 
-// getPastOrder: api call to get a past order of the client user type
+// getPastOrders: api call to get a past order of the client user type
 // @navigate: parameter that will navigate to past order of client user type
 // @dispatch: parameter that will dispatch action and payload.
-export const getPastOrder = (navigate) => async (dispatch) => {
+export const getPastOrders = (navigate) => async (dispatch) => {
     // dispatch action type
     dispatch({ type: CLIENT_START });
 
@@ -55,4 +55,36 @@ export const getPastOrder = (navigate) => async (dispatch) => {
         // dispatch failure along with failure message
         dispatch({ type: CLIENT_FAILURE, payload: error.message });
     }
+}
+
+// postBuyBitcoin: post a bitcoin order for the client user type
+// @order: parameter object for the bitcoin order.
+// @navigate: parameter that will navigate you back to client user dashboard
+// @dispatch: parameter that will dispatch action types and payloads
+export const postBuyBitcoin = (order, navigate) => async (dispatch) => {
+    // dispatch start of action
+    dispatch({ type: CLIENT_START });
+
+    try {
+
+        // make http request and save the response data
+        const response = await AxiosWithAuth().post('/api/users/BuyBitcoin', order);
+
+        // dispatch action success along with response data
+        dispatch({ type: CLIENT_SUCCESS, payload: response.data });
+
+        // navigate back to client dashboard
+        navigate("/client-dashboard")
+
+
+        // show a message of success
+        const { message, amount } = response.data;
+        alert('message:${message}\namount: ${amount}');
+
+
+    } catch (error) {
+        // dispatch failure with failure message
+        dispatch({ type: CLIENT_FAILURE, payload: error.message });
+    }
+
 }

@@ -34,3 +34,34 @@ export const getTotalDailyTransactions = (date, navigate) => async (dispatch) =>
     }
 
 }
+
+// api call to retrieve total weekly transactions
+//@date: The param date in which you want to retrieve the weekly transactions
+//@navigate: param navigate to weekly after successful retrieval
+export const getTotalWeeklyTransactions = (date, navigate) => async (dispatch) => {
+    // dispatch start of action
+    dispatch({ type: MANAGER_START });
+
+    try {
+
+        const response = await AxiosWithAuth().post('/api/users/weekly', {
+            start_day: date.start_day,
+            start_month: date.start_month,
+            start_year: date.start_year,
+            end_day: date.end_day,
+            end_month: date.end_month,
+            end_year: date.end_year
+        });
+
+        // dispatch success and assign response data to payload.
+        dispatch({ type: MANAGER_SUCCESS, payload: response.data });
+
+        // navigate to weekly page to view total weekly transactions
+        navigate("/manager-dashboard/weekly")
+
+    } catch (error) {
+        // dispatch failure and failure message
+        dispatch({ type: MANAGER_FAILURE, payload: error.message });
+    }
+
+}

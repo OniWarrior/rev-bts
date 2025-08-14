@@ -8,11 +8,13 @@ import { combineReducers } from 'redux';
 import { loginReducer } from './login-reducer';
 import signupReducer from './signup-reducer';
 import managerReducer from './manager-reducer';
+import clientReducer from './client-reducer';
 
 const rootReducer = combineReducers({
     loginReducer,
     signupReducer,
-    managerReducer
+    managerReducer,
+    clientReducer
 
 });
 

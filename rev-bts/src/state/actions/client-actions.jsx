@@ -143,3 +143,4 @@ export const postMoneyTranser = (transfer, navigate) => async (dispatch) => {
         dispatch({ type: CLIENT_FAILURE, payload: error.message });
     }
 }
+

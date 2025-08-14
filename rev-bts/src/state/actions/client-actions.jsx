@@ -79,7 +79,7 @@ export const postBuyBitcoin = (order, navigate) => async (dispatch) => {
 
         // show a message of success
         const { message, amount } = response.data;
-        alert('message:${message}\namount: ${amount}');
+        alert(`message:${message}\namount: ${amount}`);
 
 
     } catch (error) {

@@ -90,3 +90,33 @@ export const postTraderBuyBitcoinTransaction = (clientId, navigate) => async (di
         dispatch({ type: TRADER_FAILURE, payload: error.message });
     }
 }
+
+// postTraderSellBitcoinTransaction: post selling some bitcoin on behalf of the client
+// @clientId: parameter of the id of the client. this is used to sell bitcoin for client
+// @navigate: navigation param used to navigate to trader dashboard after bitcoin sell.
+// @dispatch: dispatch actions and payloads. 
+
+export const postTraderSellBitcoinTransaction = (clientId, navigate) => async (dispatch) => {
+    // dispatch start of action
+    dispatch({ type: TRADER_START });
+
+    try {
+
+        // make http request and save response 
+        const response = await AxiosWithAuth().post('/api/user/TraderSellBitcoin', clientId);
+
+        // dispatch success and assign response data
+        dispatch({ type: TRADER_SUCCESS, payload: response.data });
+
+        // navigate back to trader dashboard
+        navigate('/trader-dashboard');
+
+        // display the message and amount posted
+        const { message, amount } = response.data
+        alert(`message: ${message}\namount: ${amount}`);
+
+    } catch (error) {
+        // dispatch failure action and failure message
+        dispatch({ type: TRADER_FAILURE, payload: error.message });
+    }
+}

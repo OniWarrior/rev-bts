@@ -6,9 +6,23 @@
  * * */
 
 import React from "react";
+import { connect } from "react-redux";
+import {
+    getBitcoinWallet,
+    getPastOrders,
+    fetchLatestForCBuy,
+    fetchLatestForCSell
+} from "../../state/actions/client-actions";
+import { useNavigate } from "react-router";
 
-const clientDashBoard = (props) => {
+
+const ClientDashBoard = (props) => {
+
+    // local state var for navigation
+    const navigate = useNavigate();
+
+
 
 }
 
-export default clientDashBoard;
+export default ClientDashBoard;

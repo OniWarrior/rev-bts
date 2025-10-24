@@ -16,6 +16,8 @@ initialState = {
     error: ""
 }
 
+
+// reducer function for trader action suite
 const traderReducer = (state = initialState, action) => {
     switch (action.type) {
         case TRADER_START:

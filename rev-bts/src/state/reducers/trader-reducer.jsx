@@ -10,7 +10,7 @@ import {
     TRADER_FAILURE
 } from "../actions/trader-actions";
 
-initialState = {
+const initialState = {
     trader: {},
     loading: false,
     error: ""

@@ -10,7 +10,7 @@ import {
     SIGNUP_FAILURE
 } from "../actions/signup-actions";
 
-initialState = {
+const initialState = {
     signup: {},
     loading: false,
     error: ""

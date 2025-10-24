@@ -10,7 +10,7 @@ import {
     MANAGER_FAILURE
 } from "../actions/manager-actions";
 
-initialState = {
+const initialState = {
     totalTransactions: {},
     loading: false,
     error: ""

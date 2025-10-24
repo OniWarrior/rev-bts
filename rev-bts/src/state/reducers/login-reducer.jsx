@@ -10,7 +10,7 @@ import {
     LOGIN_START
 } from "../actions/login-actions";
 
-initialState = {
+const initialState = {
     login: {},
     loading: false,
     error: ""

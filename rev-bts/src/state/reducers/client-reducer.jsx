@@ -11,7 +11,7 @@ import {
 } from "../actions/client-actions";
 
 
-initialState = {
+const initialState = {
     client: {},
     loading: false,
     error: ""

@@ -120,3 +120,31 @@ export const postTraderSellBitcoinTransaction = (clientId, navigate) => async (d
         dispatch({ type: TRADER_FAILURE, payload: error.message });
     }
 }
+
+// cancelTransferOrTransaction: Call that cancels an order or transfer
+// @orderOrTransfer: parameter that represents the order or transfer that will be canceled.
+// @navigate: allows for the navigation to the trader dashboard.
+// @dispatch: allows for action dispatch and payload to reducer function
+export const cancelTransferOrTransaction = (orderOrTransfer, navigate) => async (dispatch) => {
+    try {
+        // dispatch start of action
+        dispatch({ type: TRADER_START });
+
+        // make the api call
+        const canceledOrderOrTransfer = await AxiosWithAuth().put(`/api/users/cancel-payment-or-transfer`, orderOrTransfer);
+
+        // dispatch success to reducer
+        dispatch({ type: TRADER_SUCCESS, payload: cancelTransferOrTransaction });
+
+        // navigate to trader dashboard
+        navigate("/trader-dashboard");
+
+        // confirmation message that tells trader that operation was successful
+        alert("Transfer/Order was successfully canceled");
+
+    } catch (err) {
+        // api call fails dispatch failure to reducer
+        dispatch({ type: TRADER_FAILURE, payload: err.message });
+    }
+
+}

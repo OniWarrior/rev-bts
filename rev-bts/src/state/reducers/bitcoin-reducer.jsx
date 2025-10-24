@@ -1,32 +1,28 @@
-import AxiosWithAuth from "../../components/utils/axios-with-auth";
+import {
+    BITCOIN_START,
+    BITCOIN_SUCCESS,
+    BITCOIN_FAILURE
+} from "../actions/bitcoin-actions";
 
-export const BITCOIN_START = "BITCOIN_START";
-export const BITCOIN_SUCCESS = "BITCOIN_SUCCESS";
-export const BITCOIN_FAILURE = "BITCOIN_FAILURE";
-
-// getLatestPriceForCPurchase: get the latest price
-// of Bitcoin when client user is trying to purchase bitcoin
-export const getLatestPriceForCPurchase = (navigate) => async (dispatch) => {
-    try {
-        // dispatch start of action to reducer function
-        dispatch({ type: BITCOIN_START });
-
-        // make api call to get the latest price
-        const price = await AxiosWithAuth().get("/api/users/latest");
-
-        // api call successful, dispatch success and payload to reducer function
-        dispatch({ type: BITCOIN_SUCCESS, payload: price });
-
-        // navigate to the buy bitcoin page for the client purchase
-        navigate("/client-dashboard/buy-bitcoin");
-
-
-
-    } catch (err) {
-        // api call failure if this point is reached
-        // dispatch failure to reducer function along with the failure message
-        dispatch({ type: BITCOIN_FAILURE, payload: err.message });
-
-    }
-
+// initial state obj for bitcoin actions
+const initialState = {
+    bitcoin: {},
+    loading: '',
+    error: ''
 }
+
+// bitcoin reducer function to create new state tree
+const bitcoinReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case BITCOIN_START:
+            return { ...state, loading: true };
+        case BITCOIN_SUCCESS:
+            return { ...state, payload: action.payload, loading: false };
+        case BITCOIN_FAILURE:
+            return { ...state, error: action.payload, loading: false };
+        default:
+            return state;
+    }
+}
+
+export default bitcoinReducer;

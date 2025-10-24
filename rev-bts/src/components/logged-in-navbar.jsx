@@ -24,6 +24,14 @@ const LoggedInNav = (props) => {
         navigate('/');
     }
 
+    <div className="nav-container">
+        <nav className="nav-row">
+            <div className="btn-home" onClick={goHome}></div>
+            <div className="btn-login" onClick={goLogin}></div>
+            <div className="btn-signup" onClick={goSignup}></div>
+        </nav>
+    </div>
+
 
 
 

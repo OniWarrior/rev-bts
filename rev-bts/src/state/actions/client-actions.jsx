@@ -13,7 +13,7 @@ export const CLIENT_FAILURE = "CLIENT_FAILURE";
 // getBitcoinWallet: get the bitcoin wallet of the client usertype
 // @navigate: parameter used to navigate to wallet.
 // @dispatch: parameter used to dispatch actions to reducer function
-export const getBitcoinWallet = (navigate) => async (dispatch) => {
+export const getBitcoinWallet = () => async (dispatch) => {
     // dispatch start of action
     dispatch({ type: CLIENT_START });
     try {
@@ -23,8 +23,8 @@ export const getBitcoinWallet = (navigate) => async (dispatch) => {
         // dispatch success and assign response data to payload
         dispatch({ type: CLIENT_SUCCESS, payload: response.data });
 
-        // navigate to the wallet of client user type
-        navigate("/client-dashboard/bitcoin-wallet");
+        // pop up alert window and show the amount of bitcoin client possesses
+        alert(`Here is the amount of bitcoin in your wallet: ${response.data}`)
 
     } catch (error) {
         // dispatch failure with the failure message

@@ -16,22 +16,91 @@ import {
     fetchLatestPriceForCSell
 } from '../../state/actions/bitcoin-actions'
 import { useNavigate } from "react-router";
+import "../../styles/nav-bar.css";
 
 const ClientNav = (props) => {
     // local state var for navigation
     const navigate = useNavigate();
 
-
-
-
-}
-
-// map the login to props
-const mapStateToProps = (state) => {
-    return {
-        login: state.loginReducer.login
+    // handler func to logout
+    const logOut = (e) => {
+        e.preventDefault();
+        localStorage.removeItem('token');
+        navigate('/');
     }
+
+    // handler func for home
+    const goHome = () => {
+        navigate('/');
+    }
+
+    // handler func to handle navigating to dashboard
+    const goToDash = (e) => {
+        e.preventDefault();
+
+        // navigate to dashboard
+        navigate("/client-dashboard");
+    }
+
+    // handler func to handle the retrieval of the client's bitcoin wallet
+    const getWallet = (e) => {
+        e.preventDefault();
+
+        // make api call to get the amount of bitcoin in wallet
+        props.getBitcoinWallet();
+    }
+
+    // handler func to handle navigation to buy bitcoin
+    const goToBuy = (e) => {
+        e.preventDefault();
+
+        // make api call to get latest price of bitcoin and nav to buy bitcoin
+        props.fetchLatestPriceForCPurchase(navigate);
+    }
+
+    // handler func to handle navigation to sell bitcoin
+    const goToSell = (e) => {
+        e.preventDefault()
+
+        // make api call to get latest price of bitcoin and nav to sell bitcoin
+        props.fetchLatestPriceForCSell(navigate);
+    }
+
+    // handler func to handle navigation to past orders
+    const goToOrders = (e) => {
+        e.preventDefault();
+
+        // make api call to get past orders and navigate to orders page
+        props.getPastOrders(navigate);
+    }
+
+    // handler func to handle navigation to transfer money
+    const goToTransfer = (e) => {
+        e.preventDefault();
+
+        // navigate to transfer money
+        navigate("/client-dashboard/transfer-money");
+    }
+
+    return (
+
+        <div className="nav-container">
+            <nav className="nav-row">
+                <div className="btn-dashboard" onClick={goToDash}></div>
+                <div className="btn-wallet" onClick={getBitcoinWallet}></div>
+                <div className="btn-buy" onClick={goToBuy}></div>
+                <div className="btn-sell" onClick={goToSell}></div>
+                <div className="btn-orders" onClick={goToOrders}></div>
+                <div className="btn-transfer" onClick={goToTransfer}></div>
+                <div className="btn-logout" onClick={logOut}></div>
+            </nav>
+        </div>
+
+    )
+
 }
+
+
 
 
 // map api calls to props
@@ -42,4 +111,4 @@ const mapDispatchTProps = {
     getPastOrders
 }
 
-export default connect(mapStateToProps, mapDispatchTProps)(ClientNav)
+export default connect(mapDispatchTProps)(ClientNav)

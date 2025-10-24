@@ -57,3 +57,51 @@ export const getLatestPriceForCSell = (navigate) => async (dispatch) => {
     }
 
 }
+
+
+// getLatestPriceForTBuy: gets the latest price of bitcoin for the trader
+// with making a purchase on behalf of a client
+export const getLatestPriceForTBuy = (navigate, clientId) => async (dispatch) => {
+    try {
+        // dispatch start of action to reducer
+        dispatch({ type: BITCOIN_START });
+
+        // make the api call
+        const price = await AxiosWithAuth().get("/api/users/latest");
+
+        // api call successful, dispatch payload and success message
+        dispatch({ type: BITCOIN_SUCCESS, payload: price });
+
+        // navigate to the buy bitcoin page for the trader using client id
+        navigate(`/trader-dashboard/trader-client-search/clients/${clientId}/trader-buy-bitcoin`);
+
+
+    } catch (err) {
+        // api call is a failure if this point is reached.
+        // dispatch failure
+        dispatch({ type: BITCOIN_FAILURE, payload: err.message });
+    }
+
+}
+
+// getLatestPriceForTSell: gets the latest price of bitcoin
+// for trader when selling bitcoin on behalf of the client
+export const getLatestPriceForTSell = (navigate, clientId) => async (dispatch) => {
+    try {
+        // dispatch start of action
+        dispatch({ type: BITCOIN_START });
+
+        //make api call to retrieve price
+        const price = await AxiosWithAuth().get("/api/users/latest");
+
+        // dispatch success to reducer
+        dispatch({ type: BITCOIN_SUCCESS, payload: price });
+
+        // navigate to the sell page for the trader
+        navigate(`/trader-dashboard/trader-client-search/clients/${clientId}/trader-sell-bitcoin`);
+
+    } catch (err) {
+        // api call is a failure, dispatch message to reducer
+        dispatch({ type: BITCOIN_FAILURE, payload: err.message });
+    }
+}

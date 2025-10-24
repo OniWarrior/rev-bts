@@ -8,8 +8,35 @@ import React from "react";
 import { connect } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 
+
 const LoggedInNav = (props) => {
+
+    // local var used to navigate
+    const navigate = useNavigate();
+
+    // collect ur value
+    const ur = props.ur
+
+    // handler func that logs user out.
+    const logOut = (e) => {
+        e.preventDefault();
+        localStorage.removeItem('token');
+        navigate('/');
+    }
+
+
+
+
 
 }
 
-export default 
+// maps global state to props of component
+const mapStateToProps = (state) => {
+    return {
+        ur: state.loginReducer.login.ur
+    }
+}
+
+
+export default connect(mapStateToProps)(LoggedInNav)
+

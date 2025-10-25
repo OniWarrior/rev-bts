@@ -6,35 +6,28 @@
  ** */
 import React from "react";
 import { connect } from "react-redux";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router";
+import ClientNav from "./client/client-nav";
+import TraderNav from "./trader/trader-nav";
+import ManagerNav from "./manager/manager-nav";
+import NavBar from "./navbar";
 
 
 const LoggedInNav = (props) => {
 
-    // local var used to navigate
     const navigate = useNavigate();
 
     // collect ur value
-    const ur = props.ur
+    const ur = props.ur;
 
-    // handler func that logs user out.
-    const logOut = (e) => {
-        e.preventDefault();
-        localStorage.removeItem('token');
-        navigate('/');
+    // decide what nav bar to render- default send them home.
+    switch (ur) {
+        case "Client": return (<ClientNav />);
+        case "Trader": return (<TraderNav />);
+        case "Manager": return (<Manager />);
+        default: navigate("/");
+
     }
-
-    <div className="nav-container">
-        <nav className="nav-row">
-            <div className="btn-home" onClick={goHome}></div>
-            <div className="btn-login" onClick={goLogin}></div>
-            <div className="btn-signup" onClick={goSignup}></div>
-        </nav>
-    </div>
-
-
-
-
 
 }
 

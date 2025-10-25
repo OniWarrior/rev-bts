@@ -18,6 +18,8 @@ import {
 
 } from "../../state/actions/bitcoin-actions";
 import { useNavigate } from "react-router";
+import loggedInNavbar from "../logged-in-navbar";
+import LoggedInNavbar from "../logged-in-navbar";
 
 
 const ClientDashBoard = (props) => {
@@ -66,6 +68,16 @@ const ClientDashBoard = (props) => {
         // navigate to the money transfer page
         navigate("/client-dashboard/transfer-money");
     }
+
+    return (
+        <div className="client-dashboard">
+            <LoggedInNavbar />
+            <div className="client-dash-main">
+
+            </div>
+
+        </div>
+    )
 
 
 

@@ -10,13 +10,15 @@ import signupReducer from './signup-reducer';
 import managerReducer from './manager-reducer';
 import clientReducer from './client-reducer';
 import traderReducer from './trader-reducer';
+import transferReducer from './transfer-reducer';
 
 const rootReducer = combineReducers({
     loginReducer,
     signupReducer,
     managerReducer,
     clientReducer,
-    traderReducer
+    traderReducer,
+    transferReducer
 
 });
 

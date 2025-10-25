@@ -29,10 +29,7 @@ const ClientNav = (props) => {
         navigate('/');
     }
 
-    // handler func for home
-    const goHome = () => {
-        navigate('/');
-    }
+
 
     // handler func to handle navigating to dashboard
     const goToDash = (e) => {
@@ -86,12 +83,12 @@ const ClientNav = (props) => {
 
         <div className="nav-container">
             <nav className="nav-row">
-                <div className="btn-dashboard" onClick={goToDash}></div>
-                <div className="btn-wallet" onClick={getBitcoinWallet}></div>
-                <div className="btn-buy" onClick={goToBuy}></div>
-                <div className="btn-sell" onClick={goToSell}></div>
-                <div className="btn-orders" onClick={goToOrders}></div>
-                <div className="btn-transfer" onClick={goToTransfer}></div>
+                <div className="btn-c-dashboard" onClick={goToDash}></div>
+                <div className="btn-c-wallet" onClick={getBitcoinWallet}></div>
+                <div className="btn-c-buy" onClick={goToBuy}></div>
+                <div className="btn-c-sell" onClick={goToSell}></div>
+                <div className="btn-c-orders" onClick={goToOrders}></div>
+                <div className="btn-c-transfer" onClick={goToTransfer}></div>
                 <div className="btn-logout" onClick={logOut}></div>
             </nav>
         </div>

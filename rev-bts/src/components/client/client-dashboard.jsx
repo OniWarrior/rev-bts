@@ -50,7 +50,7 @@ const ClientDashBoard = (props) => {
         e.preventDefault()
 
         // make api call to fetch current bitcoin price and nav to buy bitcoin page
-        props.fetchLatestForCPurchase(navigate);
+        props.getLatestForCPurchase(navigate);
     }
 
     // handler func to fetch bitcoin price and navigate to sell bitcoin page
@@ -58,7 +58,7 @@ const ClientDashBoard = (props) => {
         e.preventDefault()
 
         // make api call to fetch current bitcoin price and nav to sell bitcoin page
-        props.fetchLatestForCSell(navigate);
+        props.getLatestForCSell(navigate);
     }
 
 
@@ -79,25 +79,25 @@ const ClientDashBoard = (props) => {
                         <h1> Client Dash-Board</h1>
                     </div>
                     <div className="upper-card-group">
-                        <div className="client-holdings-card">
+                        <div className="big-card client-holdings-card">
 
                         </div>
-                        <div className="bitcoin-price-card">
+                        <div className="big-card bitcoin-price-card">
 
                         </div>
                     </div>
                     <div className="lower-card-group">
-                        <div className="buy-bitcoin-card">
-
+                        <div className="small-card buy-bitcoin-card">
+                            <div className="btn-c-buy" onClick={goToBuyBitcoin}></div>
                         </div>
-                        <div className="sell-bitcoin-card">
-
+                        <div className="small-card sell-bitcoin-card">
+                            <div className="btn-c-sell" onClick={goToSellBitcoin}></div>
                         </div>
-                        <div className="transfer-money-card">
-
+                        <div className="small-card transfer-money-card">
+                            <div className="btn-c-transfer" onClick={goToMoneyTransfer}></div>
                         </div>
-                        <div className="past-orders-card">
-
+                        <div className="small-card past-orders-card">
+                            <div className="btn-c-orders" onClick={goToPastOrders}></div>
                         </div>
 
                     </div>

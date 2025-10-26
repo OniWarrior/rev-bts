@@ -50,6 +50,90 @@
 
 
 /*
+ * client nav bar stylings
+ *
+ *****************/
+.btn-c-dashboard{
+    background-image: url('../assets/dashboardimg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size:2em;
+    height:3em;
+    width:3em;
+    border-radius: 50%;
+
+}
+
+.btn-c-wallet{
+    background-image: url('../assets/bitcoin_wallet_icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size:2em;
+    height:3em;
+    width:3em;
+    border-radius: 50%;
+
+}
+
+.btn-c-buy{
+    background-image: url('../assets/buy-bitcoin-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size:2em;
+    height:3em;
+    width:3em;
+    border-radius: 50%;
+
+}
+
+.btn-c-sell{
+    background-image: url('../assets/sellbitcoin.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size:2em;
+    height:3em;
+    width:3em;
+    border-radius: 50%;
+
+}
+
+.btn-c-orders{
+    background-image: url('../assets/bitcoin_orders_icon.JPG');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size:2em;
+    height:3em;
+    width:3em;
+    border-radius: 50%;
+
+}
+
+.btn-c-transfer{
+    background-image: url('../assets/money_transfer_icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size:2em;
+    height:3em;
+    width:3em;
+    border-radius: 50%;
+
+}
+
+
+
+ /*
+  *
+  * end of client nav bar stylings
+  ********/
+
+
+/*
  * Rule set for reactivity of nav bar icons
 */
 

@@ -48,12 +48,24 @@
     border-radius: 50%;
 }
 
+.btn-logout{
+    background-image: url('../assets/logout-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size:2em;
+    height:3em;
+    width:3em;
+    border-radius: 50%;
+}
+
 
 /*
  * client nav bar stylings
  *
  *****************/
 .btn-c-dashboard{
+    background-color: white;
     background-image: url('../assets/dashboardimg.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -66,6 +78,7 @@
 }
 
 .btn-c-wallet{
+    background-color: white;
     background-image: url('../assets/bitcoin_wallet_icon.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -78,6 +91,7 @@
 }
 
 .btn-c-buy{
+    background-color: white;
     background-image: url('../assets/buy-bitcoin-icon.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -90,6 +104,7 @@
 }
 
 .btn-c-sell{
+    background-color: white;
     background-image: url('../assets/sellbitcoin.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -102,6 +117,7 @@
 }
 
 .btn-c-orders{
+    background-color: white;
     background-image: url('../assets/bitcoin_orders_icon.JPG');
     background-repeat: no-repeat;
     background-position: center;
@@ -114,6 +130,7 @@
 }
 
 .btn-c-transfer{
+    background-color: white;
     background-image: url('../assets/money_transfer_icon.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -143,6 +160,7 @@
     justify-content: space-evenly;
     width: 50%;
     padding-left: 50%;
+    padding-top:0.5%;
 }
 
 /*
@@ -153,6 +171,7 @@
     border-bottom: 2px solid rgba(255, 145, 0, 0.868);
     box-sizing: border-box;
     box-shadow: 0px 3px 4px rgba(255, 145, 0, 0.868) ;
+    height:4em;
 }
 
 

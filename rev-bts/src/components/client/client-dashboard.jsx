@@ -13,13 +13,14 @@ import {
 
 } from "../../state/actions/client-actions";
 import {
-    fetchLatestForCPurchase,
-    fetchLatestForCSell
+    getLatestPriceForCPurchase,
+    getLatestPriceForCSell
 
 } from "../../state/actions/bitcoin-actions";
 import { useNavigate } from "react-router";
-import loggedInNavbar from "../logged-in-navbar";
-import LoggedInNavbar from "../logged-in-navbar";
+import LoggedInNav from "../logged-in-navbar";
+import "../../styles/client-dashboard.css";
+
 
 
 const ClientDashBoard = (props) => {
@@ -71,8 +72,14 @@ const ClientDashBoard = (props) => {
 
     return (
         <div className="client-dashboard">
-            <LoggedInNavbar />
-            <div className="client-dash-main">
+            <LoggedInNav />
+            <div className="client-dashboard-main">
+                <div className="client-dashboard-container">
+                    <div className="client-dashboard-header">
+                        <h1> Client Dash-Board</h1>
+                    </div>
+
+                </div>
 
             </div>
 
@@ -97,8 +104,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
     getBitcoinWallet,
     getPastOrders,
-    fetchLatestForCPurchase,
-    fetchLatestForCSell
+    getLatestPriceForCPurchase,
+    getLatestPriceForCSell
 }
 
 

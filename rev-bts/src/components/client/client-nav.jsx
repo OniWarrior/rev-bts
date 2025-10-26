@@ -12,8 +12,8 @@ import {
 
 } from "../../state/actions/client-actions";
 import {
-    fetchLatestPriceForCPurchase,
-    fetchLatestPriceForCSell
+    getLatestPriceForCPurchase,
+    getLatestPriceForCSell
 } from '../../state/actions/bitcoin-actions'
 import { useNavigate } from "react-router";
 import "../../styles/nav-bar.css";
@@ -52,7 +52,7 @@ const ClientNav = (props) => {
         e.preventDefault();
 
         // make api call to get latest price of bitcoin and nav to buy bitcoin
-        props.fetchLatestPriceForCPurchase(navigate);
+        props.getLatestPriceForCPurchase(navigate);
     }
 
     // handler func to handle navigation to sell bitcoin
@@ -60,7 +60,7 @@ const ClientNav = (props) => {
         e.preventDefault()
 
         // make api call to get latest price of bitcoin and nav to sell bitcoin
-        props.fetchLatestPriceForCSell(navigate);
+        props.getLatestPriceForCSell(navigate);
     }
 
     // handler func to handle navigation to past orders
@@ -101,11 +101,11 @@ const ClientNav = (props) => {
 
 
 // map api calls to props
-const mapDispatchTProps = {
-    fetchLatestPriceForCPurchase,
-    fetchLatestPriceForCSell,
+const mapDispatchToProps = {
+    getLatestPriceForCPurchase,
+    getLatestPriceForCSell,
     getBitcoinWallet,
     getPastOrders
 }
 
-export default connect(mapDispatchTProps)(ClientNav)
+export default connect(null, mapDispatchToProps)(ClientNav);

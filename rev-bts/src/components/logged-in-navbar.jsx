@@ -10,7 +10,7 @@ import { useNavigate } from "react-router";
 import ClientNav from "./client/client-nav";
 import TraderNav from "./trader/trader-nav";
 import ManagerNav from "./manager/manager-nav";
-import NavBar from "./navbar";
+
 
 
 const LoggedInNav = (props) => {
@@ -18,13 +18,13 @@ const LoggedInNav = (props) => {
     const navigate = useNavigate();
 
     // collect ur value
-    const ur = props.ur;
+    const ur = props.login.ur;
 
     // decide what nav bar to render- default send them home.
     switch (ur) {
-        case "Client": return (<ClientNav />);
-        case "Trader": return (<TraderNav />);
-        case "Manager": return (<Manager />);
+        case "Client": return <ClientNav />;
+        case "Trader": return <TraderNav />;
+        case "Manager": return <ManagerNav />;
         default: navigate("/");
 
     }
@@ -34,7 +34,9 @@ const LoggedInNav = (props) => {
 // maps global state to props of component
 const mapStateToProps = (state) => {
     return {
-        ur: state.loginReducer.login.ur
+        login: state.loginReducer.login,
+        loading: state.loginReducer.loading,
+        error: state.loginReducer.error
     }
 }
 

@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const AxiosWithAuth = () => {
     return axios.create({
-        baseURL: 'https://bitcoin-transaction-system-be-72349974fde7.herokuapp.com/',
+        baseURL: 'http://localhost:8000/',
         headers: {
             Authorization: localStorage.getItem("token")
         }

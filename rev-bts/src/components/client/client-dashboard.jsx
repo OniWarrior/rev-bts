@@ -78,6 +78,30 @@ const ClientDashBoard = (props) => {
                     <div className="client-dashboard-header">
                         <h1> Client Dash-Board</h1>
                     </div>
+                    <div className="upper-card-group">
+                        <div className="client-holdings-card">
+
+                        </div>
+                        <div className="bitcoin-price-card">
+
+                        </div>
+                    </div>
+                    <div className="lower-card-group">
+                        <div className="buy-bitcoin-card">
+
+                        </div>
+                        <div className="sell-bitcoin-card">
+
+                        </div>
+                        <div className="transfer-money-card">
+
+                        </div>
+                        <div className="past-orders-card">
+
+                        </div>
+
+                    </div>
+
 
                 </div>
 

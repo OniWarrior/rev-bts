@@ -74,3 +74,14 @@
    
     
 }
+
+
+.big-card-headers{
+    display: flex;
+    flex-direction: row;
+    height:50%;    
+    color:black;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: x-large;
+}

@@ -163,3 +163,46 @@ export const postMoneyTranser = (transfer, navigate) => async (dispatch) => {
     }
 }
 
+
+// getPortfolioValue: retrieve the total value of portfolio bitcoin holdings
+// @dispatch: paramter to dispatch action types along with assigning payload.
+export const getPortfolioValue = () => async (dispatch) => {
+    try {
+
+        // dispatch start of action
+        dispatch({ type: CLIENT_START });
+
+        // make the api call to retrieve the portfolio value
+        const portfolioValue = await AxiosWithAuth().get("/api/users/portfolio-value");
+
+        //dispatch success to reducer function
+        dispatch({ type: CLIENT_SUCCESS, payload: portfolioValue });
+
+
+
+    } catch (err) {
+        // dispatch failure along with failure message
+        dispatch({ type: CLIENT_FAILURE, payload: err.message });
+    }
+}
+
+
+// getPurchasingPower: retrieve the purchasing power,(usd balance), of client
+// @dispatch: paramter to dispatch action types along with assigning payload.
+export const getPurchasingPower = () => async (dispatch) => {
+    try {
+        // dispatch start of action
+        dispatch({ type: CLIENT_START });
+
+        // make the api call to get the purchasing power
+        const purchasingPower = await AxiosWithAuth().get("/api/users/purchasing-power");
+
+        // dispatch success to reducer
+        dispatch({ type: CLIENT_SUCCESS, payload: purchasingPower });
+
+    } catch (err) {
+        // dispatch failure along with failure message
+        dispatch({ type: CLIENT_FAILURE, payload: err.message });
+    }
+}
+

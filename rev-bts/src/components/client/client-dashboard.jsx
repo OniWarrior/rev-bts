@@ -80,9 +80,18 @@ const ClientDashBoard = (props) => {
                     </div>
                     <div className="upper-card-group">
                         <div className="big-card client-holdings-card">
+                            <div className="big-card-headers">
+                                <h2>Portfolio Total Value</h2>
+                                <h2>Purchase Power</h2>
+                                <h2>Bitcoin Holdings</h2>
+                            </div>
+
 
                         </div>
                         <div className="big-card bitcoin-price-card">
+                            <div className="big-card-headers">
+                                <h2>Current Bitcoin Price</h2>
+                            </div>
 
                         </div>
                     </div>

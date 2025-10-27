@@ -89,15 +89,19 @@ const ClientDashBoard = (props) => {
                     <div className="lower-card-group">
                         <div className="small-card buy-bitcoin-card">
                             <div className="btn-c-buy" onClick={goToBuyBitcoin}></div>
+                            <h2>Buy Bitcoin</h2>
                         </div>
                         <div className="small-card sell-bitcoin-card">
                             <div className="btn-c-sell" onClick={goToSellBitcoin}></div>
+                            <h2>Sell Bitcoin</h2>
                         </div>
                         <div className="small-card transfer-money-card">
                             <div className="btn-c-transfer" onClick={goToMoneyTransfer}></div>
+                            <h2>Transfer Money To Trader</h2>
                         </div>
                         <div className="small-card past-orders-card">
                             <div className="btn-c-orders" onClick={goToPastOrders}></div>
+                            <h2>Past Orders</h2>
                         </div>
 
                     </div>

@@ -11,7 +11,6 @@ export const CLIENT_SUCCESS = "CLIENT_SUCCESS";
 export const CLIENT_FAILURE = "CLIENT_FAILURE";
 
 // getBitcoinWallet: get the bitcoin wallet of the client usertype
-// @navigate: parameter used to navigate to wallet.
 // @dispatch: parameter used to dispatch actions to reducer function
 export const getBitcoinWallet = () => async (dispatch) => {
     // dispatch start of action
@@ -32,6 +31,26 @@ export const getBitcoinWallet = () => async (dispatch) => {
     }
 }
 
+
+// getBitcoinHoldings: get the bitcoin wallet of the client usertype
+//                   : without the alert window pop up.
+//                   : Essentially the same as getBitcoinWallet.
+// @dispatch: parameter used to dispatch actions to reducer function
+export const getBitcoinHoldings = () => async (dispatch) => {
+    // dispatch start of action
+    dispatch({ type: CLIENT_START });
+    try {
+        // make the api call and save the response
+        const response = await AxiosWithAuth().get("/api/users/BitcoinWallet");
+
+        // dispatch success and assign response data to payload
+        dispatch({ type: CLIENT_SUCCESS, payload: response.data });
+
+    } catch (error) {
+        // dispatch failure with the failure message
+        dispatch({ type: CLIENT_FAILURE, payload: error.message });
+    }
+}
 
 
 // getPastOrders: api call to get a past order of the client user type

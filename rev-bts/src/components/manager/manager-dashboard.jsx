@@ -18,6 +18,9 @@ const ManagerDashboard = (props) => {
     return (
         <div className="manager-dashboard">
             <ManagerNav />
+            <div className="manager-dashboard-main">
+
+            </div>
         </div>
     )
 

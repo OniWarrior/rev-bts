@@ -6,6 +6,7 @@ import Login from './components/login';
 import { Routes, Route } from 'react-router-dom';
 import ProtectedRoute from './components/utils/protected-route';
 import ClientDashBoard from './components/client/client-dashboard';
+import ManagerDashboard from './components/manager/manager-dashboard';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route element={<ProtectedRoute />} >
           <Route path='/client-dashboard' element={<ClientDashBoard />} />
+          <Route path='/manager-dashboard' element={<ManagerDashboard />} />
         </Route>
 
       </Routes>

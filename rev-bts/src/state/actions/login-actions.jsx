@@ -40,6 +40,7 @@ export const postLogin = (navigate, login) => async (dispatch) => {
         switch (response.data.ur) {
             case "Trader": navigate('/trader-dashboard'); break;
             case "Client": navigate("/client-dashboard"); break;
+            case "Manager": navigate("/manager-dashboard");
             default:
                 return;
         }

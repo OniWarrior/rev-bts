@@ -17,13 +17,13 @@ export const getBitcoinWallet = () => async (dispatch) => {
     dispatch({ type: CLIENT_START });
     try {
         // make the api call and save the response
-        const response = await AxiosWithAuth().get("/api/users/BitcoinWallet");
+        const response = await AxiosWithAuth().get("/api/users/bitcoin-wallet");
 
         // dispatch success and assign response data to payload
         dispatch({ type: CLIENT_SUCCESS, payload: response.data });
 
         // pop up alert window and show the amount of bitcoin client possesses
-        alert(`Here is the amount of bitcoin in your wallet: ${response.data}`)
+        alert(`Here is the amount of bitcoin in your wallet: ${response.data.wallet}`)
 
     } catch (error) {
         // dispatch failure with the failure message
@@ -41,10 +41,10 @@ export const getBitcoinHoldings = () => async (dispatch) => {
     dispatch({ type: CLIENT_START });
     try {
         // make the api call and save the response
-        const response = await AxiosWithAuth().get("/api/users/BitcoinWallet");
+        const response = await AxiosWithAuth().get("/api/users/bitcoin-wallet");
 
         // dispatch success and assign response data to payload
-        dispatch({ type: CLIENT_SUCCESS, payload: response.data });
+        dispatch({ type: CLIENT_SUCCESS, payload: response.data.wallet });
 
     } catch (error) {
         // dispatch failure with the failure message
@@ -62,7 +62,7 @@ export const getPastOrders = (navigate) => async (dispatch) => {
 
     try {
         // make http request and save the response
-        const response = await AxiosWithAuth().get('/api/users/Orders');
+        const response = await AxiosWithAuth().get('/api/users/orders');
 
         // dispatch success along with the payload
         dispatch({ type: CLIENT_SUCCESS, payload: response.data });
@@ -87,7 +87,7 @@ export const postBuyBitcoin = (order, navigate) => async (dispatch) => {
     try {
 
         // make http request and save the response data
-        const response = await AxiosWithAuth().post('/api/users/BuyBitcoin', order);
+        const response = await AxiosWithAuth().post('/api/users/buy-bitcoin', order);
 
         // dispatch action success along with response data
         dispatch({ type: CLIENT_SUCCESS, payload: response.data });
@@ -117,7 +117,7 @@ export const postSellBitcoin = (order, navigate) => async (dispatch) => {
     try {
 
         // make http request and save response
-        const response = await AxiosWithAuth().post("/api/users/SellBitCoin", order)
+        const response = await AxiosWithAuth().post("/api/users/sell-bitcoin", order)
 
         // dispatch success along with the payload
         dispatch({ type: CLIENT_SUCCESS, payload: response.data });
@@ -146,7 +146,7 @@ export const postMoneyTranser = (transfer, navigate) => async (dispatch) => {
     try {
 
         // make http request and save the response
-        const response = await AxiosWithAuth().post('/api/users/TransferMoney', transfer)
+        const response = await AxiosWithAuth().post('/api/users/transfer-money', transfer)
 
         // dispatch success along with the payload
         dispatch({ type: CLIENT_SUCCESS, payload: response.data });
@@ -164,19 +164,20 @@ export const postMoneyTranser = (transfer, navigate) => async (dispatch) => {
 }
 
 
-// getPortfolioValue: retrieve the total value of portfolio bitcoin holdings
+// getPortfolio: retrieve the total value of portfolio bitcoin holdings
+//             : and current usd balance along with the current amount of bitcoin.
 // @dispatch: paramter to dispatch action types along with assigning payload.
-export const getPortfolioValue = () => async (dispatch) => {
+export const getPortfolio = () => async (dispatch) => {
     try {
 
         // dispatch start of action
         dispatch({ type: CLIENT_START });
 
         // make the api call to retrieve the portfolio value
-        const portfolioValue = await AxiosWithAuth().get("/api/users/portfolio-value");
+        const portfolioValue = await AxiosWithAuth().get("/api/users/portfolio");
 
         //dispatch success to reducer function
-        dispatch({ type: CLIENT_SUCCESS, payload: portfolioValue });
+        dispatch({ type: CLIENT_SUCCESS, payload: portfolioValue.data });
 
 
 
@@ -187,22 +188,5 @@ export const getPortfolioValue = () => async (dispatch) => {
 }
 
 
-// getPurchasingPower: retrieve the purchasing power,(usd balance), of client
-// @dispatch: paramter to dispatch action types along with assigning payload.
-export const getPurchasingPower = () => async (dispatch) => {
-    try {
-        // dispatch start of action
-        dispatch({ type: CLIENT_START });
 
-        // make the api call to get the purchasing power
-        const purchasingPower = await AxiosWithAuth().get("/api/users/purchasing-power");
-
-        // dispatch success to reducer
-        dispatch({ type: CLIENT_SUCCESS, payload: purchasingPower });
-
-    } catch (err) {
-        // dispatch failure along with failure message
-        dispatch({ type: CLIENT_FAILURE, payload: err.message });
-    }
-}
 

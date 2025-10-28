@@ -23,7 +23,7 @@ const traderReducer = (state = initialState, action) => {
         case TRADER_START:
             return { ...state, loading: true };
         case TRADER_SUCCESS:
-            return { ...state, payload: action.payload, loading: false };
+            return { ...state, trader: action.payload, loading: false };
         case TRADER_FAILURE:
             return { ...state, error: action.payload, loading: false };
         default:

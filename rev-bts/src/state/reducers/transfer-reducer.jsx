@@ -16,7 +16,7 @@ const transferReducer = (state = initialState, action) => {
         case TRANSFER_START:
             return { ...state, loading: true };
         case TRANSFER_SUCCESS:
-            return { ...state, payload: action.payload, loading: false };
+            return { ...state, transfer: action.payload, loading: false };
         case TRANSFER_FAILURE:
             return { ...state, error: action.payload, loading: false };
         default:

@@ -8,7 +8,8 @@ import React from "react";
 import { connect } from "react-redux";
 import {
     getBitcoinWallet,
-    getPastOrders
+    getPastOrders,
+    getPortfolio
 
 } from "../../state/actions/client-actions";
 import {
@@ -26,6 +27,7 @@ const ClientNav = (props) => {
     const logOut = (e) => {
         e.preventDefault();
         localStorage.removeItem('token');
+        localStorage.removeItem('ur');
         navigate('/');
     }
 
@@ -40,11 +42,12 @@ const ClientNav = (props) => {
     }
 
     // handler func to handle the retrieval of the client's bitcoin wallet
-    const getWallet = (e) => {
+    const getBitcoinWallet = (e) => {
         e.preventDefault();
 
         // make api call to get the amount of bitcoin in wallet
         props.getBitcoinWallet();
+        props.getPortfolio()
     }
 
     // handler func to handle navigation to buy bitcoin
@@ -105,7 +108,8 @@ const mapDispatchToProps = {
     getLatestPriceForCPurchase,
     getLatestPriceForCSell,
     getBitcoinWallet,
-    getPastOrders
+    getPastOrders,
+    getPortfolio
 }
 
 export default connect(null, mapDispatchToProps)(ClientNav);

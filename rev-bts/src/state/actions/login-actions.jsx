@@ -33,6 +33,9 @@ export const postLogin = (navigate, login) => async (dispatch) => {
         // store jwt in local storage
         localStorage.setItem("token", response.data.token);
 
+        // store ur in local storage
+        localStorage.setItem("ur", response.data.ur)
+
         // look at the user type and navigate to a dashboard
         switch (response.data.ur) {
             case "Trader": navigate('/trader-dashboard'); break;

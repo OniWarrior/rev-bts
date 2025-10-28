@@ -12,6 +12,7 @@ const TraderNav = (props) => {
     const logOut = (e) => {
         e.preventDefault();
         localStorage.removeItem('token');
+        localStorage.removeItem('ur');
         navigate('/');
     }
 

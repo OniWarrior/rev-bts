@@ -17,7 +17,7 @@ const bitcoinReducer = (state = initialState, action) => {
         case BITCOIN_START:
             return { ...state, loading: true };
         case BITCOIN_SUCCESS:
-            return { ...state, payload: action.payload, loading: false };
+            return { ...state, bitcoin: action.payload, loading: false };
         case BITCOIN_FAILURE:
             return { ...state, error: action.payload, loading: false };
         default:

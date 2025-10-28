@@ -1,8 +1,28 @@
 import AxiosWithAuth from "../../components/utils/axios-with-auth";
 
+
 export const BITCOIN_START = "BITCOIN_START";
 export const BITCOIN_SUCCESS = "BITCOIN_SUCCESS";
 export const BITCOIN_FAILURE = "BITCOIN_FAILURE";
+
+
+
+// getLatestBitcoinPrice: get the latest price of bitcoin
+export const getLatestBitcoinPrice = () => async (dispatch) => {
+    try {
+        // dispatch start of action
+        dispatch({ type: BITCOIN_START });
+
+        const price = await AxiosWithAuth().get("/api/users/latest");
+
+        // api call successful, dispatch success and payload to reducer function
+        dispatch({ type: BITCOIN_SUCCESS, payload: price.data });
+
+    } catch (err) {
+        //dispatch failure
+        dispatch({ type: BITCOIN_FAILURE, payload: err.message });
+    }
+}
 
 // getLatestPriceForCPurchase: get the latest price
 // of Bitcoin when client user is trying to purchase bitcoin

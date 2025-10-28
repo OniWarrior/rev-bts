@@ -5,21 +5,25 @@
  * 
  * * */
 
-import React from "react";
+
 import { connect } from "react-redux";
 import {
     getBitcoinWallet,
-    getPastOrders
+    getPastOrders,
+    getBitcoinHoldings,
+    getPortfolio
 
 } from "../../state/actions/client-actions";
 import {
     getLatestPriceForCPurchase,
-    getLatestPriceForCSell
+    getLatestPriceForCSell,
+    getLatestBitcoinPrice
 
 } from "../../state/actions/bitcoin-actions";
 import { useNavigate } from "react-router";
 import LoggedInNav from "../logged-in-navbar";
 import "../../styles/client-dashboard.css";
+import { useEffect } from "react";
 
 
 
@@ -28,13 +32,16 @@ const ClientDashBoard = (props) => {
     // local state var for navigation
     const navigate = useNavigate();
 
-    // handler func to retrieve bitcoin wallet
-    const goToWallet = (e) => {
 
-        e.preventDefault();
-        // make api call to retrieve wallet
-        props.getBitcoinWallet(navigate);
-    }
+
+    // fetch portfolio value, bitcoin holdings, and purchasing power
+    useEffect(() => {
+        props.getLatestBitcoinPrice()
+        props.getPortfolio()
+
+    }, [])
+
+
 
 
     // handler func to retrieve past orders
@@ -43,6 +50,7 @@ const ClientDashBoard = (props) => {
 
         // make api call to retrieve past orders of the client
         props.getPastOrders(navigate);
+
     }
 
     // handler func to fetch bitcoin price and navigate to buy bitcoin page
@@ -50,7 +58,7 @@ const ClientDashBoard = (props) => {
         e.preventDefault()
 
         // make api call to fetch current bitcoin price and nav to buy bitcoin page
-        props.getLatestForCPurchase(navigate);
+        props.getLatestPriceForCPurchase(navigate);
     }
 
     // handler func to fetch bitcoin price and navigate to sell bitcoin page
@@ -58,7 +66,7 @@ const ClientDashBoard = (props) => {
         e.preventDefault()
 
         // make api call to fetch current bitcoin price and nav to sell bitcoin page
-        props.getLatestForCSell(navigate);
+        props.getLatestPriceForCSell(navigate);
     }
 
 
@@ -85,12 +93,20 @@ const ClientDashBoard = (props) => {
                                 <h2>Purchase Power</h2>
                                 <h2>Bitcoin Holdings</h2>
                             </div>
+                            <div className="big-card-header-values">
+                                <p>$ {props.client.portfolioValue}</p>
+                                <p>$ {props.client.balance}</p>
+                                <p>BTC {props.client.wallet}</p>
+                            </div>
 
 
                         </div>
                         <div className="big-card bitcoin-price-card">
                             <div className="big-card-headers">
                                 <h2>Current Bitcoin Price</h2>
+                            </div>
+                            <div className="big-card-header-values">
+                                <p>$ {props.bitcoin.price}</p>
                             </div>
 
                         </div>
@@ -127,12 +143,17 @@ const ClientDashBoard = (props) => {
 
 }
 
+
+
 // maps global state to props of component
 const mapStateToProps = (state) => {
     return {
         client: state.clientReducer.client,
         loading: state.clientReducer.loading,
-        error: state.clientReducer.error
+        error: state.clientReducer.error,
+        bitcoin: state.bitcoinReducer.bitcoin,
+        bitcoin_loading: state.bitcoinReducer.loading,
+        bitcoin_error: state.bitcoinReducer.error
     }
 
 }
@@ -142,7 +163,10 @@ const mapDispatchToProps = {
     getBitcoinWallet,
     getPastOrders,
     getLatestPriceForCPurchase,
-    getLatestPriceForCSell
+    getLatestPriceForCSell,
+    getBitcoinHoldings,
+    getLatestBitcoinPrice,
+    getPortfolio
 }
 
 

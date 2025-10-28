@@ -11,6 +11,7 @@ import managerReducer from './manager-reducer';
 import clientReducer from './client-reducer';
 import traderReducer from './trader-reducer';
 import transferReducer from './transfer-reducer';
+import bitcoinReducer from './bitcoin-reducer';
 
 const rootReducer = combineReducers({
     loginReducer,
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
     managerReducer,
     clientReducer,
     traderReducer,
-    transferReducer
+    transferReducer,
+    bitcoinReducer
 
 });
 

@@ -18,7 +18,7 @@ const LoggedInNav = (props) => {
     const navigate = useNavigate();
 
     // collect ur value
-    const ur = props.login.ur;
+    const ur = localStorage.getItem("ur");
 
     // decide what nav bar to render- default send them home.
     switch (ur) {

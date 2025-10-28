@@ -27,7 +27,7 @@ const clientReducer = (state = initialState, action) => {
         case CLIENT_START:
             return { ...state, loading: true };
         case CLIENT_SUCCESS:
-            return { ...state, payload: action.payload, loading: false };
+            return { ...state, client: action.payload, loading: false };
         case CLIENT_FAILURE:
             return { ...state, error: action.payload, loading: false };
         default:

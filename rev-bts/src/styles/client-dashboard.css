@@ -97,3 +97,42 @@
     font-size: large;
 
 }
+
+/*
+ * Animations applied to buttons in dashboard
+ */
+
+ .small-card:hover{
+    animation: scale-up 0.4s forwards;;
+}
+
+.small-card:not(:hover){
+    animation: after-scale-up 0.4s  ease-out;
+}
+
+/*
+ * Animations for button scale up and down
+*/
+
+@keyframes scale-up {
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform: scale(1.2);
+    }
+    
+}
+
+
+
+@keyframes after-scale-up {
+    from {
+        transform: scale(1.5);
+    }
+    to{
+        transform: scale(1);
+    }
+    
+}

@@ -216,6 +216,70 @@
 
 }
 
+.btn-logout:hover{
+    animation: scale-up 0.4s forwards;;
+}
+
+.btn-logout:not(:hover){
+    animation: after-scale-up 0.4s  ease-out;
+}
+
+/*
+ * Animations applied to client dashboard nav bar icons 
+*/
+
+.btn-c-dashboard:hover{
+    animation: scale-up 0.4s forwards;;
+}
+
+.btn-c-dashboard:not(:hover){
+    animation: after-scale-up 0.4s  ease-out;
+}
+
+.btn-c-wallet:hover{
+    animation: scale-up 0.4s forwards;;
+}
+
+.btn-c-wallet:not(:hover){
+    animation: after-scale-up 0.4s  ease-out;
+}
+
+.btn-c-buy:hover{
+    animation: scale-up 0.4s forwards;;
+}
+
+.btn-c-buy:not(:hover){
+    animation: after-scale-up 0.4s  ease-out;
+}
+
+.btn-c-sell:hover{
+    animation: scale-up 0.4s forwards;;
+}
+
+.btn-c-sell:not(:hover){
+    animation: after-scale-up 0.4s  ease-out;
+}
+
+.btn-c-orders:hover{
+    animation: scale-up 0.4s forwards;;
+}
+
+.btn-c-orders:not(:hover){
+    animation: after-scale-up 0.4s  ease-out;
+}
+
+.btn-c-transfer:hover{
+    animation: scale-up 0.4s forwards;;
+}
+
+.btn-c-transfer:not(:hover){
+    animation: after-scale-up 0.4s  ease-out;
+}
+
+/*
+ * end of client nav bar animations
+ */
+
 /*
  * Animation for nav bar icons
 */

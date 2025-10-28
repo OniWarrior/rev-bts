@@ -25,7 +25,7 @@ export const postLogin = (navigate, login) => async (dispatch) => {
     try {
 
         // execute the api call and store the response 
-        const response = await axios.post("https://bitcoin-transaction-system-be-72349974fde7.herokuapp.com/api/auth/Login", login);
+        const response = await axios.post("http://localhost:8000/api/auth/login", login);
 
         // dispatch success along with the success payload
         dispatch({ type: LOGIN_SUCCESS, payload: response.data });
@@ -33,8 +33,11 @@ export const postLogin = (navigate, login) => async (dispatch) => {
         // store jwt in local storage
         localStorage.setItem("token", response.data.token);
 
+        // store ur in local storage
+        localStorage.setItem("ur", response.data.ur)
+
         // look at the user type and navigate to a dashboard
-        switch (response.data.user_type) {
+        switch (response.data.ur) {
             case "Trader": navigate('/trader-dashboard'); break;
             case "Client": navigate("/client-dashboard"); break;
             default:

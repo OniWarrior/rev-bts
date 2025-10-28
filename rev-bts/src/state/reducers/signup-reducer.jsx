@@ -22,7 +22,7 @@ const signupReducer = (state = initialState, action) => {
         case SIGNUP_START:
             return { ...state, loading: true };
         case SIGNUP_SUCCESS:
-            return { ...state, payload: action.payload, loading: false };
+            return { ...state, signup: action.payload, loading: false };
         case SIGNUP_FAILURE:
             return { ...state, error: action.payload, loading: false };
         default:

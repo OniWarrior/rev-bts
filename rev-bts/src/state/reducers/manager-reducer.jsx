@@ -23,7 +23,7 @@ const managerReducer = (state = initialState, action) => {
         case MANAGER_START:
             return { ...state, loading: true };
         case MANAGER_SUCCESS:
-            return { ...state, payload: action.payload, loading: false };
+            return { ...state, totalTransactions: action.payload, loading: false };
         case MANAGER_FAILURE:
             return { ...state, error: action.payload, loading: false };
         default:

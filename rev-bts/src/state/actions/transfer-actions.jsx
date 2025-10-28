@@ -7,16 +7,17 @@ export const TRANSFER_FAILURE = "TRANSFER_FAILURE";
 
 // fetchTransfers: retrieves all transfers made to the trader by a specific client
 
-export const fetchTransfers = (cleintId) => async (dispatch) => {
+export const fetchTransfers = (clientId) => async (dispatch) => {
     try {
 
         // dispatch start of action
         dispatch({ type: TRANSFER_START });
 
         // make api call
-        const transfers = await AxiosWithAuth().get(`/api/users/clients/${cleintId}/payments`);
+        const transfers = await AxiosWithAuth().get(`/api/users/clients/${clientId}/payments`);
 
-
+        // dispatch success to reducer and payload
+        dispatch({ type: TRANSFER_SUCCESS, payload: transfers });
 
     } catch (err) {
         // api call failure, dispatch to reducer

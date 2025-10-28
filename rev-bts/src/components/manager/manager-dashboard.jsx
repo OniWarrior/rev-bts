@@ -15,6 +15,12 @@ import ManagerNav from './manager-nav';
 
 const ManagerDashboard = (props) => {
 
+    return (
+        <div className="manager-dashboard">
+            <ManagerNav />
+        </div>
+    )
+
 }
 
 

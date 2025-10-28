@@ -1,0 +1,49 @@
+/*
+ * Box styling for the dashboard container that contains the buttons for client functions
+*/
+.manager-dashboard-container{
+    border-radius: 20px;
+    box-sizing: border-box;
+    border:1px solid gray;
+    height:95%;
+    width:70%;
+    background-color: white;
+    margin:auto;
+    box-shadow: 1px 2px 5px  orange;
+}
+
+.manager-dashboard-main{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+}
+
+.manager-dashboard-header{
+    color:black;
+    font-size: xx-large;
+    text-align: center;
+    height:10%;
+    border-bottom: 1px solid black;
+    box-shadow: 2px 3px 5px  black;
+}
+
+
+.upper-card-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    margin-bottom: 2%;
+    height: 80%;
+    
+}
+
+.big-card{
+    height:30%;
+    width:90%;
+    margin:auto;
+    border:1px solid black;
+    border-radius: 20px;
+    box-shadow: 1px 2px 5px  grey;
+    
+}

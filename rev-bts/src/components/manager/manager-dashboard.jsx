@@ -11,16 +11,52 @@ import {
     getTotalMonthlyTransactions,
     getTotalWeeklyTransactions
 } from "../../state/actions/manager-actions";
-import ManagerNav from './manager-nav';
+import LoggedInNav from '../logged-in-navbar.jsx';
+import "../../styles/manager-dashboard.css";
 
 const ManagerDashboard = (props) => {
 
     return (
         <div className="manager-dashboard">
-            <ManagerNav />
+            <LoggedInNav />
             <div className="manager-dashboard-main">
+                <div className="manager-dashboard-container">
+                    <div className="manager-dashboard-header">
+                        <h1> Manager Dash-Board</h1>
+                    </div>
+                    <div className="upper-card-group">
+                        <div className="big-card manager-monthly-card">
+                            <div className="big-card-headers">
+                                <h2>Total Monthly Transactions</h2>
+                            </div>
+                            <div className="big-card-header-values">
+                                <p>Monthly</p>
+                            </div>
+                        </div>
+                        <div className="big-card manager-daily-card">
+                            <div className="big-card-headers">
+                                <h2>Total Daily Transactions</h2>
+                            </div>
+                            <div className="big-card-header-values">
+                                <p>Daily</p>
+                            </div>
+                        </div>
+                        <div className="big-card manager-weekly-card">
+                            <div className="big-card-headers">
+                                <h2>Total Weekly Transactions</h2>
+                            </div>
+                            <div className="big-card-header-values">
+                                <p>Weekly</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
 
             </div>
+
         </div>
     )
 

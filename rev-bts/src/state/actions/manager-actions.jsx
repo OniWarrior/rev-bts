@@ -66,19 +66,20 @@ export const getTotalWeeklyTransactions = (date, navigate) => async (dispatch) =
 
 }
 
-export const getTotalMonthlyTransactions = (data, navigate) => async (dispatch) => {
-    // dispatch start of action
-    dispatch({ type: MANAGER_START });
+export const getTotalMonthlyTransactions = (day, month, year) => async (dispatch) => {
 
     try {
+
+        // dispatch start of action
+        dispatch({ type: MANAGER_START });
+
         //make api call and save response 
-        const response = await AxiosWithAuth().post('/api/users/monthly', date);
+        const response = await AxiosWithAuth().post('/api/users/monthly', day, month, year);
 
         // dispatch success and assign response data to payload
         dispatch({ type: MANAGER_SUCCESS, payload: response.data });
 
-        // navigate to monthly page to view monthly transactions.
-        navigate("/manager-dashboard/monthly");
+
 
     } catch (error) {
         // dispatch failure and failure message

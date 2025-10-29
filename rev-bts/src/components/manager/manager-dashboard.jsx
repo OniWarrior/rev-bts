@@ -13,8 +13,62 @@ import {
 } from "../../state/actions/manager-actions";
 import LoggedInNav from '../logged-in-navbar.jsx';
 import "../../styles/manager-dashboard.css";
+import useFormValidation from '../../hooks/useFormValidation.js';
+import Daily_Form_Schema from "../../form-schemas/daily-form-schema.jsx";
+import Monthly_Form_Schema from "../../form-schemas/monthly-form-schema.jsx";
+
 
 const ManagerDashboard = (props) => {
+
+    // Initial values and errors for daily card
+    const initialDailyValues = {
+        daily_date: ""
+    }
+
+    const initialDailyErrors = {
+        daily_date: ''
+    }
+
+    // Initial values and errors for monthly card
+    const initialMonthlyValues = {
+        monthly_date: ''
+    }
+
+    const initialMonthlyErrors = {
+        monthly_date: ''
+    }
+    const [selectedDailyDate, dailyErrors, setSelectedDailyDate] = useFormValidation(Daily_Form_Schema, initialDailyErrors, initialDailyValues);
+    const [selectedMonthlyDate, monthlyErrors, setSelectedMonthlyDate] = useFormValidation(Monthly_Form_Schema, initialMonthlyErrors, initialMonthlyValues);
+
+    // handler func that sets state values for selectedDailyDate
+    const onDailyChange = (e) => {
+
+        setSelectedDailyDate(e, Daily_Form_Schema);
+    }
+
+    // handler func that sets state values for selectedMonthlyDate
+    const onMonthlyChange = (e) => {
+
+        setSelectedMonthlyDate(e, Monthly_Form_Schema);
+
+    }
+
+    // handles the date format and api call after form submission.
+    const onMonthlyFormSubmit = () => {
+
+        // break apart selectedMonthlyDate
+        // into year, month, day
+        const monthlyDate = new Date(selectedMonthlyDate.monthly_date);
+        const month = monthlyDate.getMonth() + 1;
+        const day = monthlyDate.getDate() + 1;
+        const year = monthlyDate.getFullYear();
+
+        // make the api call that will retrieve the total number of transactions
+        // of the month of the provided year.
+        props.getTotalMonthlyTransactions(day, month, year);
+
+    }
+
 
     return (
         <div className="manager-dashboard">
@@ -30,7 +84,25 @@ const ManagerDashboard = (props) => {
                                 <h2>Total Monthly Transactions</h2>
                             </div>
                             <div className="big-card-header-values">
-                                <p>Monthly</p>
+                                <form className="monthly-date-form" onSubmit={onMonthlyFormSubmit}>
+                                    <input
+                                        id="monthly_date"
+                                        type="date"
+                                        name="monthly_date"
+                                        onChange={onMonthlyChange}
+                                    />
+                                    <button
+                                        type='submit'
+                                        className='monthly-submit'
+
+
+                                    >
+                                        Submit
+                                    </button>
+
+                                </form>
+
+
                             </div>
                         </div>
                         <div className="big-card manager-daily-card">
@@ -38,7 +110,13 @@ const ManagerDashboard = (props) => {
                                 <h2>Total Daily Transactions</h2>
                             </div>
                             <div className="big-card-header-values">
-                                <p>Daily</p>
+                                <input
+                                    name="daily_date"
+                                    type="date"
+                                    id="daily_date"
+                                    onChange={onDailyChange}
+                                />
+
                             </div>
                         </div>
                         <div className="big-card manager-weekly-card">
@@ -46,7 +124,7 @@ const ManagerDashboard = (props) => {
                                 <h2>Total Weekly Transactions</h2>
                             </div>
                             <div className="big-card-header-values">
-                                <p>Weekly</p>
+
                             </div>
                         </div>
                     </div>

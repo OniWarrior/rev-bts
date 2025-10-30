@@ -47,3 +47,26 @@
     box-shadow: 1px 2px 5px  grey;
     
 }
+
+.date-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+.monthly-submit{
+     width: 100px;
+    height:30px;
+    background-color: goldenrod;
+    color:white;
+    border-radius: 20px;
+}
+
+.daily-submit{
+     width: 100px;
+    height:30px;
+    background-color: goldenrod;
+    color:white;
+    border-radius: 20px;
+}

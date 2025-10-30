@@ -22,20 +22,25 @@ const ManagerDashboard = (props) => {
 
     // Initial values and errors for daily card
     const initialDailyValues = {
-        daily_date: ""
+        daily_date: "",
+        error: ''
     }
 
     const initialDailyErrors = {
-        daily_date: ''
+        daily_date: '',
+        error: ''
     }
 
     // Initial values and errors for monthly card
     const initialMonthlyValues = {
-        monthly_date: ''
+        date: '',
+        error: ''
+
     }
 
     const initialMonthlyErrors = {
-        monthly_date: ''
+        date: '',
+        error: ''
     }
     const [selectedDailyDate, dailyErrors, setSelectedDailyDate] = useFormValidation(Daily_Form_Schema, initialDailyErrors, initialDailyValues);
     const [selectedMonthlyDate, monthlyErrors, setSelectedMonthlyDate] = useFormValidation(Monthly_Form_Schema, initialMonthlyErrors, initialMonthlyValues);
@@ -44,6 +49,7 @@ const ManagerDashboard = (props) => {
     const onDailyChange = (e) => {
 
         setSelectedDailyDate(e, Daily_Form_Schema);
+
     }
 
     // handler func that sets state values for selectedMonthlyDate
@@ -54,20 +60,25 @@ const ManagerDashboard = (props) => {
     }
 
     // handles the date format and api call after form submission.
-    const onMonthlyFormSubmit = () => {
-
-        // break apart selectedMonthlyDate
-        // into year, month, day
-        const monthlyDate = new Date(selectedMonthlyDate.monthly_date);
-        const month = monthlyDate.getMonth() + 1;
-        const day = monthlyDate.getDate() + 1;
-        const year = monthlyDate.getFullYear();
-
+    const onMonthlyFormSubmit = (e) => {
+        e.preventDefault()
         // make the api call that will retrieve the total number of transactions
         // of the month of the provided year.
-        props.getTotalMonthlyTransactions(day, month, year);
+        props.getTotalMonthlyTransactions(selectedMonthlyDate);
 
     }
+
+    // handles the date format and api call after form submission.
+    const onDailyFormSubmit = (e) => {
+        e.preventDefault()
+        // make the api call that will retrieve the total number of transactions
+        // of the month of the provided year.
+        props.getTotalDailyTransactions(selectedDailyDate);
+
+    }
+
+
+
 
 
     return (
@@ -84,18 +95,17 @@ const ManagerDashboard = (props) => {
                                 <h2>Total Monthly Transactions</h2>
                             </div>
                             <div className="big-card-header-values">
-                                <form className="monthly-date-form" onSubmit={onMonthlyFormSubmit}>
+                                <form className="date-form" onSubmit={onMonthlyFormSubmit}>
                                     <input
-                                        id="monthly_date"
+                                        id="date"
                                         type="date"
-                                        name="monthly_date"
+                                        name="date"
                                         onChange={onMonthlyChange}
                                     />
+
                                     <button
                                         type='submit'
                                         className='monthly-submit'
-
-
                                     >
                                         Submit
                                     </button>
@@ -110,12 +120,20 @@ const ManagerDashboard = (props) => {
                                 <h2>Total Daily Transactions</h2>
                             </div>
                             <div className="big-card-header-values">
-                                <input
-                                    name="daily_date"
-                                    type="date"
-                                    id="daily_date"
-                                    onChange={onDailyChange}
-                                />
+                                <form className="date-form" onSubmit={onDailyFormSubmit}>
+                                    <input
+                                        id="daily_date"
+                                        type="date"
+                                        name="daily_date"
+                                        onChange={onDailyChange}
+                                    />
+                                    <button
+                                        type='submit'
+                                        className='daily-submit'
+                                    >
+                                        Submit
+                                    </button>
+                                </form>
 
                             </div>
                         </div>

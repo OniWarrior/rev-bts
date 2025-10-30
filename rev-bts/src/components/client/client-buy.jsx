@@ -55,6 +55,11 @@ const ClientBuy = (props) => {
         <div className="c-buy-container">
             <LoggedInNav />
             <div className="c-buy-main-container">
+                <div className="c-buy-container">
+                    <div className="c-buy-header">
+                        <h1>Buy Bitcoin Form</h1>
+                    </div>
+                </div>
 
             </div>
         </div>

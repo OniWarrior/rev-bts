@@ -9,8 +9,14 @@ import React from "react";
 import { connect } from 'react-redux';
 import LoggedInNav from "../logged-in-navbar";
 import { postBuyBitcoin } from "../../state/actions/client-actions";
+import { useNavigate } from "react-router";
 
 const ClientBuy = (props) => {
+
+    // local state var for navigation after purchase
+    const navigate = useNavigate();
+
+
 
 }
 

@@ -34,7 +34,21 @@ const ClientBuy = (props) => {
         email: '',
         password: '',
         comm_type: ''
+    }
 
+    const [buy, errors, setBuy] = useFormValidation(Client_Buy_Form_Schema, initialValues, initialErrors);
+
+    // handler func to handle change
+    const onChange = (e) => {
+        setBuy(e, Client_Buy_Form_Schema);
+    }
+
+    // handler func to handle form submission
+    const onFormSubmit = (e) => {
+        e.preventDefault();
+
+        // make api call to post purchase
+        props.postBuyBitcoin(buy, navigate);
     }
 
 

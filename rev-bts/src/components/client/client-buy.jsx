@@ -53,7 +53,7 @@ const ClientBuy = (props) => {
     }
 
     return (
-        <div className="c-buy-container">
+        <div className="c-buy">
             <LoggedInNav />
             <div className="c-buy-main-container">
                 <div className="c-buy-container">

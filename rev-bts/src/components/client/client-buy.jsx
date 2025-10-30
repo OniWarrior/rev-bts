@@ -13,3 +13,15 @@ import { postBuyBitcoin } from "../../state/actions/client-actions";
 const ClientBuy = (props) => {
 
 }
+
+const mapStateToProps = (state) => {
+    return {
+        client: state.clientReducer.client,
+        loading: state.clientReducer.loading,
+        error: state.clientReducer.error
+    }
+}
+
+const mapDispatchToProps = { postBuyBitcoin }
+
+export default connect(mapStateToProps, mapDispatchToProps)(ClientBuy)

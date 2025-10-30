@@ -12,6 +12,7 @@ import { postBuyBitcoin } from "../../state/actions/client-actions";
 import { useNavigate } from "react-router";
 import useFormValidation from '../../hooks/useFormValidation';
 import Client_Buy_Form_Schema from "../../form-schemas/client-buy-form-schema";
+import "../../styles/client/client-buy.css";
 
 const ClientBuy = (props) => {
 

@@ -51,6 +51,15 @@ const ClientBuy = (props) => {
         props.postBuyBitcoin(buy, navigate);
     }
 
+    return (
+        <div className="c-buy-container">
+            <LoggedInNav />
+            <div className="c-buy-main-container">
+
+            </div>
+        </div>
+    )
+
 
 
 }

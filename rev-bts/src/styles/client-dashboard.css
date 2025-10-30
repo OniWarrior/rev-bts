@@ -30,7 +30,7 @@
 }
 
 
-.upper-card-group{
+.c-upper-card-group{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,8 +40,8 @@
     
 }
 
-.big-card{
-    height:30%;
+.c-big-card{
+    height:20%;
     width:90%;
     margin:auto;
     border:1px solid black;

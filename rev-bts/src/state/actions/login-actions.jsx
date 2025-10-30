@@ -18,11 +18,12 @@ export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 // API call for posting a login of a user
 export const postLogin = (navigate, login) => async (dispatch) => {
 
-    // dispatch the start of the action
-    dispatch({ type: LOGIN_START });
-
-    // execute api call
     try {
+
+        // dispatch the start of the action
+        dispatch({ type: LOGIN_START });
+
+
 
         // execute the api call and store the response 
         const response = await axios.post("http://localhost:8000/api/auth/login", login);
@@ -40,6 +41,7 @@ export const postLogin = (navigate, login) => async (dispatch) => {
         switch (response.data.ur) {
             case "Trader": navigate('/trader-dashboard'); break;
             case "Client": navigate("/client-dashboard"); break;
+            case "Manager": navigate("/manager-dashboard");
             default:
                 return;
         }

@@ -31,7 +31,7 @@ export const postRegisterAccount = (navigate, signup) => async (dispatch) => {
     } catch (error) {
 
         // dispatch failure along with the failure message from the server.
-        dispatch({ type: SIGNUP_FAILURE, payload: error_message });
+        dispatch({ type: SIGNUP_FAILURE, payload: error.message });
     }
 }
 

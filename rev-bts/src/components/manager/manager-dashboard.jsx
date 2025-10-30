@@ -16,6 +16,7 @@ import "../../styles/manager-dashboard.css";
 import useFormValidation from '../../hooks/useFormValidation.js';
 import Daily_Form_Schema from "../../form-schemas/daily-form-schema.jsx";
 import Monthly_Form_Schema from "../../form-schemas/monthly-form-schema.jsx";
+import Weekly_Form_Schema from "../../form-schemas/weekly-form-schema.jsx";
 
 
 const ManagerDashboard = (props) => {
@@ -42,9 +43,23 @@ const ManagerDashboard = (props) => {
         date: '',
         error: ''
     }
+
+    // Initial vaules and errors for weekly card
+    const initialWeeklyValues = {
+        start_date: '',
+        end_date: '',
+        error: ''
+    }
+
+    const initialWeeklyErrors = {
+        start_date: '',
+        end_date: '',
+        error: ''
+
+    }
     const [selectedDailyDate, dailyErrors, setSelectedDailyDate] = useFormValidation(Daily_Form_Schema, initialDailyErrors, initialDailyValues);
     const [selectedMonthlyDate, monthlyErrors, setSelectedMonthlyDate] = useFormValidation(Monthly_Form_Schema, initialMonthlyErrors, initialMonthlyValues);
-
+    const [selectedWeeklyDate, weeklyErrors, setSelectedWeeklyDate] = useFormValidation(Weekly_Form_Schema, initialWeeklyValues, initialWeeklyErrors);
     // handler func that sets state values for selectedDailyDate
     const onDailyChange = (e) => {
 
@@ -57,6 +72,11 @@ const ManagerDashboard = (props) => {
 
         setSelectedMonthlyDate(e, Monthly_Form_Schema);
 
+    }
+
+    // handler func that sets state values for selectedWeeklyDate
+    const onWeeklyChange = (e) => {
+        setSelectedWeeklyDate(e, Weekly_Form_Schema);
     }
 
     // handles the date format and api call after form submission.
@@ -75,6 +95,13 @@ const ManagerDashboard = (props) => {
         // of the month of the provided year.
         props.getTotalDailyTransactions(selectedDailyDate);
 
+    }
+
+    // handles the date format and api call after form submission.
+    const onWeeklyFormSubmit = (e) => {
+        e.preventDefault()
+
+        props.getTotalWeeklyTransactions(selectedWeeklyDate)
     }
 
 
@@ -109,6 +136,9 @@ const ManagerDashboard = (props) => {
                                     >
                                         Submit
                                     </button>
+                                    <div className="error">
+                                        <p>{monthlyErrors.error}</p>
+                                    </div>
 
                                 </form>
 
@@ -133,6 +163,9 @@ const ManagerDashboard = (props) => {
                                     >
                                         Submit
                                     </button>
+                                    <div className="error">
+                                        <p>{dailyErrors.error}</p>
+                                    </div>
                                 </form>
 
                             </div>
@@ -142,6 +175,37 @@ const ManagerDashboard = (props) => {
                                 <h2>Total Weekly Transactions</h2>
                             </div>
                             <div className="big-card-header-values">
+                                <form className="weekly-form" onSubmit={onWeeklyFormSubmit}>
+                                    <div className="start-date-group">
+                                        <h2>Start Date</h2>
+                                        <input
+                                            id="start_date"
+                                            type="date"
+                                            name="start_date"
+                                            onChange={onWeeklyChange}
+                                        />
+                                    </div>
+                                    <div className="end-date-group">
+                                        <h2>End Date</h2>
+                                        <input
+                                            id="end_date"
+                                            type="date"
+                                            name="end_date"
+                                            onChange={onWeeklyChange}
+                                        />
+                                    </div>
+                                    <button
+                                        type='submit'
+                                        className='daily-submit'
+                                    >
+                                        Submit
+                                    </button>
+                                    <div className="error">
+                                        <p>{weeklyErrors.error}</p>
+                                    </div>
+
+                                </form>
+
 
                             </div>
                         </div>

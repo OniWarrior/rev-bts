@@ -1,7 +1,7 @@
 import * as yup from 'yup'
 
 const Monthly_Form_Schema = yup.object().shape({
-    date: yup.date().required()
+    date: yup.date().required("A date selection is required")
 
 })
 

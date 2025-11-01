@@ -62,6 +62,73 @@ const ClientBuy = (props) => {
                     </div>
                     <div className="upper-card-group">
                         <div className="buy-big-card-form-container">
+                            <form className="c-buy-form" onSubmit={onFormSubmit}>
+                                <div className="bitcoin-price-group">
+                                    <h2>Bitcoin Price</h2>
+                                    <p>$ {props.bitcoin.price}</p>
+                                </div>
+                                <div className="bitcoin-amount-group">
+                                    <h2>BTC Amount</h2>
+                                    <input
+                                        id="Bitcoin_balance"
+                                        type="text"
+                                        name="Bitcoin_balance"
+                                        placeholder="BTC amount to purchase"
+                                        required
+                                    />
+                                </div>
+                                <div className="email-group">
+                                    <h2>Email</h2>
+                                    <input
+                                        id="email"
+                                        type="text"
+                                        name="email"
+                                        placeholder="email"
+                                        required
+                                    />
+                                </div>
+                                <div className="password-group">
+                                    <h2>Password</h2>
+                                    <input
+                                        id="password"
+                                        type="password"
+                                        name="password"
+                                        placeholder="password"
+                                        required
+                                    />
+
+                                </div>
+                                <div className="comm-pay-group">
+                                    <h2>Commission Pay type</h2>
+                                    <div className="comm-radio-btn-group">
+                                        <input
+                                            id="comm_type"
+                                            name="comm_type"
+                                            type="radio"
+                                            value="USD"
+
+                                        />
+                                        <p>USD</p>
+                                        <input
+                                            id="comm_type"
+                                            name="comm_type"
+                                            type="radio"
+                                            value="BTC"
+
+                                        />
+                                        <p>BTC</p>
+                                    </div>
+                                </div>
+
+                                <button
+                                    type='submit'
+                                    className='c-buy-submit'
+
+
+                                >
+                                    Buy BTC
+                                </button>
+                            </form>
 
 
                         </div>
@@ -82,7 +149,10 @@ const mapStateToProps = (state) => {
     return {
         client: state.clientReducer.client,
         loading: state.clientReducer.loading,
-        error: state.clientReducer.error
+        error: state.clientReducer.error,
+        bitcoin: state.bitcoinReducer.bitcoin,
+        b_loading: state.bitcoinReducer.loading,
+        b_error: state.bitcoinReducer.error
     }
 }
 

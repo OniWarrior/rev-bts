@@ -31,17 +31,44 @@
     justify-content: center;
     
     margin-bottom: 2%;
-    height: 80%;
+    height: 90%;
     
 }
 
 .buy-big-card-form-container{
     display: flex;
-    height:60%;
-    width:90%;
+    
+    height:90%;
+    width:95%;
     margin:auto;
     border:1px solid black;
     border-radius: 20px;
     box-shadow: 1px 2px 5px  grey;
     justify-content: center;
 }
+
+.c-buy-form{
+    display: flex;
+    flex-direction: column;
+    font-size: x-large;    
+    width:40%;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.comm-radio-btn-group{
+    display: flex;
+    flex-direction: row;
+    font-size:medium;
+    justify-content: space-evenly;
+}
+
+.c-buy-submit{
+    width: 100px;
+    height:30px;
+    background-color: goldenrod;
+    color:white;
+    border-radius: 20px;
+}
+

@@ -35,7 +35,7 @@ export const getLatestPriceForCPurchase = (navigate) => async (dispatch) => {
         const price = await AxiosWithAuth().get("/api/users/latest");
 
         // api call successful, dispatch success and payload to reducer function
-        dispatch({ type: BITCOIN_SUCCESS, payload: price });
+        dispatch({ type: BITCOIN_SUCCESS, payload: price.data });
 
         // navigate to the buy bitcoin page for the client purchase
         navigate("/client-dashboard/buy-bitcoin");
@@ -65,7 +65,7 @@ export const getLatestPriceForCSell = (navigate) => async (dispatch) => {
 
         // api call successful
         // dispatch success to reducer function along with the payload
-        dispatch({ type: BITCOIN_SUCCESS, payload: price });
+        dispatch({ type: BITCOIN_SUCCESS, payload: price.data });
 
         // navigate to the sell bitcoin page
         navigate("/client-dashboard/sell-bitcoin");

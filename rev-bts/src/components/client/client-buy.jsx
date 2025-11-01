@@ -60,6 +60,14 @@ const ClientBuy = (props) => {
                     <div className="c-buy-header">
                         <h1>Buy Bitcoin Form</h1>
                     </div>
+                    <div className="upper-card-group">
+                        <div className="buy-big-card-form-container">
+
+
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>

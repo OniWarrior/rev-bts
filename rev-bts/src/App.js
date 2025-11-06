@@ -8,6 +8,7 @@ import ProtectedRoute from './components/utils/protected-route';
 import ClientDashBoard from './components/client/client-dashboard';
 import ClientBuy from './components/client/client-buy';
 import ManagerDashboard from './components/manager/manager-dashboard';
+import ClientSell from './components/client/client-sell';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route element={<ProtectedRoute />} >
           <Route path='/client-dashboard' element={<ClientDashBoard />} />
           <Route path='/client-dashboard/buy-bitcoin' element={<ClientBuy />} />
+          <Route path='/client-dashboard/sell-bitcoin' element={<ClientSell />} />
           <Route path='/manager-dashboard' element={<ManagerDashboard />} />
         </Route>
 

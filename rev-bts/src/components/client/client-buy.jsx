@@ -40,7 +40,8 @@ const ClientBuy = (props) => {
     const [buy, errors, setBuy] = useFormValidation(Client_Buy_Form_Schema, initialValues, initialErrors);
 
     // handler func to handle change
-    const onChange = (e) => {
+    const change = (e) => {
+
         setBuy(e, Client_Buy_Form_Schema);
     }
 
@@ -48,8 +49,14 @@ const ClientBuy = (props) => {
     const onFormSubmit = (e) => {
         e.preventDefault();
 
+        // added the btc price to updated purchase obj
+        const order = {
+            ...buy,
+            Bitcoin_price: props.bitcoin.price
+        }
+
         // make api call to post purchase
-        props.postBuyBitcoin(buy, navigate);
+        props.postBuyBitcoin(order, navigate);
     }
 
     return (
@@ -75,7 +82,11 @@ const ClientBuy = (props) => {
                                         name="Bitcoin_balance"
                                         placeholder="BTC amount to purchase"
                                         required
+                                        onChange={change}
                                     />
+                                    <div className="error" >
+                                        <p>{errors.Bitcoin_balance}</p>
+                                    </div>
                                 </div>
                                 <div className="email-group">
                                     <h2>Email</h2>
@@ -85,46 +96,55 @@ const ClientBuy = (props) => {
                                         name="email"
                                         placeholder="email"
                                         required
+                                        onChange={change}
                                     />
                                 </div>
                                 <div className="password-group">
                                     <h2>Password</h2>
                                     <input
                                         id="password"
-                                        type="password"
+                                        type="text"
                                         name="password"
                                         placeholder="password"
                                         required
+                                        onChange={change}
                                     />
 
+                                </div>
+                                <div className="error">
+                                    <p>{errors.email}</p>
+                                    <p>{errors.password}</p>
                                 </div>
                                 <div className="comm-pay-group">
                                     <h2>Commission Pay type</h2>
                                     <div className="comm-radio-btn-group">
                                         <input
-                                            id="comm_type"
+                                            id="USD"
                                             name="comm_type"
                                             type="radio"
                                             value="USD"
+                                            onChange={change}
 
                                         />
                                         <p>USD</p>
                                         <input
-                                            id="comm_type"
+                                            id="Bitcoin"
                                             name="comm_type"
                                             type="radio"
-                                            value="BTC"
+                                            value="Bitcoin"
+                                            onChange={change}
 
                                         />
                                         <p>BTC</p>
+                                    </div>
+                                    <div className="error">
+                                        <p>{errors.comm_type}</p>
                                     </div>
                                 </div>
 
                                 <button
                                     type='submit'
                                     className='c-buy-submit'
-
-
                                 >
                                     Buy BTC
                                 </button>

@@ -4,7 +4,7 @@ const Client_Buy_Form_Schema = yup.object().shape({
     Bitcoin_balance: yup.number()
         .required('The amount of bitcoin must be entered.')
         .typeError('You must specify a number')
-        .min(1, 'The amount cannot be negative'),
+        .min(0.01, 'The amount cannot be negative'),
     Bitcoin_price: yup.number(),
     comm_type: yup.string()
         .required("Please select a commission type")

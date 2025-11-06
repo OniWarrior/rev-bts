@@ -139,11 +139,11 @@ export const postSellBitcoin = (order, navigate) => async (dispatch) => {
 }
 
 
-// postMoneyTranser: api call to post a money transfer to client user type account-post a deposit
+// postMoneyTransfer: api call to post a money transfer to client user type account-post a deposit
 // @transfer: parameter object for the transfer amount.
 // @navigate: paramter to navigate back to dashboard.
 // @dispatch: paramter to dispatch action types along with assigning payload.
-export const postMoneyTranser = (transfer, navigate) => async (dispatch) => {
+export const postMoneyTransfer = (transfer, navigate) => async (dispatch) => {
     // dispatch start of action
     dispatch({ type: CLIENT_START });
 
@@ -158,12 +158,14 @@ export const postMoneyTranser = (transfer, navigate) => async (dispatch) => {
         // navigate back to client dashboard
         navigate('/client-dashboard');
 
-        // show the confirmed money transfer
-        alert(response.data);
+        // show a message of success
+        const { message } = response.data;
+        alert(`message:${message}`);
 
     } catch (error) {
         // dispatch failure along with failure message
         dispatch({ type: CLIENT_FAILURE, payload: error.message });
+        alert(`Failure: ${error.message}`)
     }
 }
 

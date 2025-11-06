@@ -9,6 +9,7 @@ import ClientDashBoard from './components/client/client-dashboard';
 import ClientBuy from './components/client/client-buy';
 import ManagerDashboard from './components/manager/manager-dashboard';
 import ClientSell from './components/client/client-sell';
+import ClientMoneyTransfer from './components/client/client-money-transfer';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path='/client-dashboard' element={<ClientDashBoard />} />
           <Route path='/client-dashboard/buy-bitcoin' element={<ClientBuy />} />
           <Route path='/client-dashboard/sell-bitcoin' element={<ClientSell />} />
+          <Route path='/client-dashboard/transfer-money' element={<ClientMoneyTransfer />} />
           <Route path='/manager-dashboard' element={<ManagerDashboard />} />
         </Route>
 

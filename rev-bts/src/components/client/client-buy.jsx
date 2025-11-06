@@ -11,7 +11,7 @@ import LoggedInNav from "../logged-in-navbar";
 import { postBuyBitcoin } from "../../state/actions/client-actions";
 import { useNavigate } from "react-router";
 import useFormValidation from '../../hooks/useFormValidation';
-import Client_Buy_Form_Schema from "../../form-schemas/client-buy-form-schema";
+import Client_Purchase_Form_Schema from "../../form-schemas/client-purchase-form-schema";
 import "../../styles/client/client-buy.css";
 
 const ClientBuy = (props) => {
@@ -37,12 +37,12 @@ const ClientBuy = (props) => {
         comm_type: ''
     }
 
-    const [buy, errors, setBuy] = useFormValidation(Client_Buy_Form_Schema, initialValues, initialErrors);
+    const [buy, errors, setBuy] = useFormValidation(Client_Purchase_Form_Schema, initialValues, initialErrors);
 
     // handler func to handle change
     const change = (e) => {
 
-        setBuy(e, Client_Buy_Form_Schema);
+        setBuy(e, Client_Purchase_Form_Schema);
     }
 
     // handler func to handle form submission

@@ -1,6 +1,6 @@
 import * as yup from 'yup'
 
-const Client_Buy_Form_Schema = yup.object().shape({
+const Client_Purchase_Form_Schema = yup.object().shape({
     Bitcoin_balance: yup.number()
         .required('The amount of bitcoin must be entered.')
         .typeError('You must specify a number')
@@ -21,4 +21,4 @@ const Client_Buy_Form_Schema = yup.object().shape({
 
 })
 
-export default Client_Buy_Form_Schema;
+export default Client_Purchase_Form_Schema;

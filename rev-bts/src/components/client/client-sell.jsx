@@ -1,20 +1,13 @@
-/*
- * Author: Stephen Aranda
- * File  : client-buy.jsx 
- * Desc  : Single component file for the client buy component
- *       : Allows the client to make a bitcoin purchase.
- * */
-
 import React from "react";
 import { connect } from 'react-redux';
 import LoggedInNav from "../logged-in-navbar";
-import { postBuyBitcoin } from "../../state/actions/client-actions";
+import { postSellBitcoin } from "../../state/actions/client-actions";
 import { useNavigate } from "react-router";
 import useFormValidation from '../../hooks/useFormValidation';
 import Client_Purchase_Form_Schema from "../../form-schemas/client-purchase-form-schema";
 import "../../styles/client/client-purchase.css";
 
-const ClientBuy = (props) => {
+const ClientSell = (props) => {
 
     // local state var for navigation after purchase
     const navigate = useNavigate();
@@ -37,12 +30,12 @@ const ClientBuy = (props) => {
         comm_type: ''
     }
 
-    const [buy, errors, setBuy] = useFormValidation(Client_Purchase_Form_Schema, initialValues, initialErrors);
+    const [sell, errors, setSell] = useFormValidation(Client_Purchase_Form_Schema, initialValues, initialErrors);
 
     // handler func to handle change
     const change = (e) => {
 
-        setBuy(e, Client_Purchase_Form_Schema);
+        setSell(e, Client_Purchase_Form_Schema);
     }
 
     // handler func to handle form submission
@@ -51,12 +44,12 @@ const ClientBuy = (props) => {
 
         // added the btc price to updated purchase obj
         const order = {
-            ...buy,
+            ...sell,
             Bitcoin_price: props.bitcoin.price
         }
 
         // make api call to post purchase
-        props.postBuyBitcoin(order, navigate);
+        props.postSellBitcoin(order, navigate);
     }
 
     return (
@@ -65,7 +58,7 @@ const ClientBuy = (props) => {
             <div className="c-purchase-main-container">
                 <div className="c-purchase-container">
                     <div className="c-purchase-header">
-                        <h1>Buy Bitcoin Form</h1>
+                        <h1>Sell Bitcoin Form</h1>
                     </div>
                     <div className="upper-card-group">
                         <div className="purchase-big-card-form-container">
@@ -80,7 +73,7 @@ const ClientBuy = (props) => {
                                         id="Bitcoin_balance"
                                         type="text"
                                         name="Bitcoin_balance"
-                                        placeholder="BTC amount to purchase"
+                                        placeholder="BTC amount to sell"
                                         required
                                         onChange={change}
                                     />
@@ -146,7 +139,7 @@ const ClientBuy = (props) => {
                                     type='submit'
                                     className='c-purchase-submit'
                                 >
-                                    Buy BTC
+                                    Sell BTC
                                 </button>
                             </form>
 
@@ -176,6 +169,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = { postBuyBitcoin }
+const mapDispatchToProps = { postSellBitcoin }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ClientBuy)
+export default connect(mapStateToProps, mapDispatchToProps)(ClientSell)

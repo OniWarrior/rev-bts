@@ -113,9 +113,10 @@ export const postBuyBitcoin = (order, navigate) => async (dispatch) => {
 // postSellBitcoin: api call to post the selling of bitcoin for the client user type
 
 export const postSellBitcoin = (order, navigate) => async (dispatch) => {
-    // dispatch start of action
-    dispatch({ type: CLIENT_START });
+
     try {
+        // dispatch start of action
+        dispatch({ type: CLIENT_START });
 
         // make http request and save response
         const response = await AxiosWithAuth().post("/api/users/sell-bitcoin", order)
@@ -126,12 +127,14 @@ export const postSellBitcoin = (order, navigate) => async (dispatch) => {
         // navigate back to dashboard
         navigate('/client-dashboard');
 
-        // show the sold bitcoin
-        alert(response.data);
+        // show a message of success
+        const { message, amount } = response.data;
+        alert(`message:${message}\namount: ${amount}`);
 
     } catch (error) {
         //dispatch failure along with failure message
         dispatch({ type: CLIENT_FAILURE, payload: error.message });
+        alert(`Failure: ${error.message}`)
     }
 }
 

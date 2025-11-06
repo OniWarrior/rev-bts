@@ -1,4 +1,4 @@
-.c-buy-container{
+.c-purchase-container{
     border-radius: 20px;
     box-sizing: border-box;
     border:1px solid gray;
@@ -10,13 +10,13 @@
 
 }
 
-.c-buy-main-container{
+.c-purchase-main-container{
     height: 90vh;
     display: flex;
     justify-content: center;
 }
 
-.c-buy-header{
+.c-purchase-header{
     color:black;
     font-size: xx-large;
     text-align: center;
@@ -35,7 +35,7 @@
     
 }
 
-.buy-big-card-form-container{
+.purchase-big-card-form-container{
     display: flex;
     
     height:90%;
@@ -47,7 +47,7 @@
     justify-content: center;
 }
 
-.c-buy-form{
+.c-purchase-form{
     display: flex;
     flex-direction: column;
     font-size: x-large;    
@@ -64,7 +64,7 @@
     justify-content: space-evenly;
 }
 
-.c-buy-submit{
+.c-purchase-submit{
     width: 100px;
     height:30px;
     background-color: goldenrod;

@@ -44,7 +44,7 @@ const ClientSell = (props) => {
 
         // added the btc price to updated purchase obj
         const order = {
-            ...buy,
+            ...sell,
             Bitcoin_price: props.bitcoin.price
         }
 
@@ -169,6 +169,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = { postBuyBitcoin }
+const mapDispatchToProps = { postSellBitcoin }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ClientSell)

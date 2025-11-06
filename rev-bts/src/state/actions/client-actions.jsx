@@ -104,6 +104,7 @@ export const postBuyBitcoin = (order, navigate) => async (dispatch) => {
     } catch (error) {
         // dispatch failure with failure message
         dispatch({ type: CLIENT_FAILURE, payload: error.message });
+        alert(`Failure: ${error.message}`)
     }
 
 }

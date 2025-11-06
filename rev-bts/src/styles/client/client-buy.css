@@ -1,0 +1,78 @@
+.c-buy-container{
+    border-radius: 20px;
+    box-sizing: border-box;
+    border:1px solid gray;
+    height:90%;
+    width:70%;
+    background-color: white;
+    margin:auto;
+    box-shadow: 1px 2px 5px  orange;
+
+}
+
+.c-buy-main-container{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+}
+
+.c-buy-header{
+    color:black;
+    font-size: xx-large;
+    text-align: center;
+    height:10%;
+    border-bottom: 1px solid black;
+    box-shadow: 2px 3px 5px  black;
+}
+
+.upper-card-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    margin-bottom: 2%;
+    height: 90%;
+    
+}
+
+.buy-big-card-form-container{
+    display: flex;
+    
+    height:90%;
+    width:95%;
+    margin:auto;
+    border:1px solid black;
+    border-radius: 20px;
+    box-shadow: 1px 2px 5px  grey;
+    justify-content: center;
+}
+
+.c-buy-form{
+    display: flex;
+    flex-direction: column;
+    font-size: x-large;    
+    width:40%;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.comm-radio-btn-group{
+    display: flex;
+    flex-direction: row;
+    font-size:medium;
+    justify-content: space-evenly;
+}
+
+.c-buy-submit{
+    width: 100px;
+    height:30px;
+    background-color: goldenrod;
+    color:white;
+    border-radius: 20px;
+}
+
+.error{
+    color:red;
+}
+

@@ -22,7 +22,7 @@ import {
 } from "../../state/actions/bitcoin-actions";
 import { useNavigate } from "react-router";
 import LoggedInNav from "../logged-in-navbar";
-import "../../styles/client-dashboard.css";
+import "../../styles/client/client-dashboard.css";
 import { useEffect } from "react";
 
 

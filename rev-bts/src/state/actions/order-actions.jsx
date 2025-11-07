@@ -14,7 +14,7 @@ export const fetchTransactions = (navigate, clientId) => async (dispatch) => {
         dispatch({ type: ORDER_START });
 
         // make api call 
-        const transactions = await AxiosWithAuth().get(`api/users/clients/${clienId}/transactions`);
+        const transactions = await AxiosWithAuth().get(`api/users/clients/${clientId}/transactions`);
 
         // dispatch success 
         dispatch({ type: ORDER_SUCCESS, payload: transactions });

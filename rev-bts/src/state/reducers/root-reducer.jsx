@@ -12,6 +12,7 @@ import clientReducer from './client-reducer';
 import traderReducer from './trader-reducer';
 import transferReducer from './transfer-reducer';
 import bitcoinReducer from './bitcoin-reducer';
+import orderReducer from './order-reducer';
 
 const rootReducer = combineReducers({
     loginReducer,
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
     clientReducer,
     traderReducer,
     transferReducer,
-    bitcoinReducer
+    bitcoinReducer,
+    orderReducer
 
 });
 

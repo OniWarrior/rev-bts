@@ -80,6 +80,9 @@ const ClientSearch = (props) => {
                                     onChange={onInputChange}
                                     required
                                 />
+                                <div className="error">
+                                    <p>{errors.email}</p>
+                                </div>
                             </div>
                             <button className="btn-c-search" type="submit">Find Client</button>
                         </div>

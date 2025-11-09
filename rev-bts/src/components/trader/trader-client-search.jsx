@@ -51,6 +51,7 @@ const ClientSearch = (props) => {
                                     required
                                 />
                             </div>
+                            <button className="btn-c-search" type="submit">Find Client</button>
                         </div>
 
                     </form>

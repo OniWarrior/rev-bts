@@ -41,6 +41,16 @@ const ClientSearch = (props) => {
                                     placeholder="Client's last name"
                                 />
                             </div>
+                            <div className="email-group">
+                                <h2>Email: </h2>
+                                <input
+                                    id="email"
+                                    type="text"
+                                    name="email"
+                                    placeholder="Client's Email"
+                                    required
+                                />
+                            </div>
                         </div>
 
                     </form>

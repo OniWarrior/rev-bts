@@ -16,10 +16,11 @@ export const TRADER_FAILURE = "TRADER_FAILURE";
 //@dispatch: parameter to dispatch action types and payload
 
 export const getCancelLog = (navigate) => async (dispatch) => {
-    // dispatch start of action
-    dispatch({ type: TRADER_START });
+
 
     try {
+        // dispatch start of action
+        dispatch({ type: TRADER_START });
 
         // make http request and save response
         const response = await AxiosWithAuth().get('api/users/cancel-log');
@@ -53,7 +54,7 @@ export const getClient = (client, navigate) => async (dispatch) => {
         dispatch({ type: TRADER_SUCCESS, payload: response.data });
 
         // navigate to search results
-        navigate("/trader-dashboard/trader-client-search/clients/search");
+        navigate("/trader-dashboard/client-search/clients/search");
 
     } catch (error) {
         // dispatch failure with failure message
@@ -147,4 +148,27 @@ export const cancelTransferOrTransaction = (orderOrTransfer, navigate) => async 
         dispatch({ type: TRADER_FAILURE, payload: err.message });
     }
 
+}
+
+
+// getTraderPortfolio: retrieve the total value of portfolio 
+// @dispatch: paramter to dispatch action types along with assigning payload.
+export const getTraderPortfolio = () => async (dispatch) => {
+    try {
+
+        // dispatch start of action
+        dispatch({ type: TRADER_START });
+
+        // make the api call to retrieve the portfolio value
+        const portfolioValue = await AxiosWithAuth().get("/api/users/trader-portfolio");
+
+        //dispatch success to reducer function
+        dispatch({ type: TRADER_SUCCESS, payload: portfolioValue.data });
+
+
+
+    } catch (err) {
+        // dispatch failure along with failure message
+        dispatch({ type: TRADER_FAILURE, payload: err.message });
+    }
 }

@@ -23,7 +23,7 @@ const ClientSearch = (props) => {
                     </div>
                     <form className="client-search-form" onSubmit={onFormSubmit}>
                         <div className="client-search-input-group">
-                            <div className="first-name-group">
+                            <div className="input-group first-name-group">
                                 <h2>First Name: </h2>
                                 <input
                                     id="first_name"
@@ -32,7 +32,7 @@ const ClientSearch = (props) => {
                                     placeholder="Client's first name"
                                 />
                             </div>
-                            <div className="last-name-group">
+                            <div className="input-group last-name-group">
                                 <h2>Last Name: </h2>
                                 <input
                                     id="last_name"
@@ -41,7 +41,7 @@ const ClientSearch = (props) => {
                                     placeholder="Client's last name"
                                 />
                             </div>
-                            <div className="email-group">
+                            <div className="input-group email-group">
                                 <h2>Email: </h2>
                                 <input
                                     id="email"

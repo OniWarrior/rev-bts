@@ -10,6 +10,20 @@ const ClientSearch = (props) => {
     // state var for navigation
     const navigate = useNavigate();
 
+    // initial local state values
+    const initialValues = {
+        first_name: '',
+        last_name: '',
+        email: ''
+    }
+
+    // initial values for errors
+    const initialErrors = {
+        first_name: '',
+        last_name: '',
+        email: ''
+    }
+
     //handler for handling submission
     const onFormSubmit = (e) => {
         e.preventDefault();

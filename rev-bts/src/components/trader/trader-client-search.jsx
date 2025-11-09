@@ -22,6 +22,18 @@ const ClientSearch = (props) => {
                         <h1>Client Search Form</h1>
                     </div>
                     <form className="client-search-form" onSubmit={onFormSubmit}>
+                        <div className="client-search-input-group">
+                            <div className="first-name-group">
+                                <h2>First Name: </h2>
+                                <input
+                                    id="first_name"
+                                    type="text"
+                                    name="first_name"
+                                    placeholder="Client's first name"
+                                />
+                            </div>
+
+                        </div>
 
                     </form>
                 </div>

@@ -16,10 +16,11 @@ export const TRADER_FAILURE = "TRADER_FAILURE";
 //@dispatch: parameter to dispatch action types and payload
 
 export const getCancelLog = (navigate) => async (dispatch) => {
-    // dispatch start of action
-    dispatch({ type: TRADER_START });
+
 
     try {
+        // dispatch start of action
+        dispatch({ type: TRADER_START });
 
         // make http request and save response
         const response = await AxiosWithAuth().get('api/users/cancel-log');

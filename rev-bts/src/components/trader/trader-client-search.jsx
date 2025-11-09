@@ -6,6 +6,13 @@ import "../../styles/trader/client-search.css";
 
 const ClientSearch = (props) => {
 
+    //handler for handling submission
+    const onFormSubmit = (e) => {
+        e.preventDefault()
+
+        props.getClient(client)
+    }
+
     return (
         <div className="client-search">
             <LoggedInNavbar />
@@ -14,10 +21,10 @@ const ClientSearch = (props) => {
                     <div className="client-search-header">
                         <h1>Client Search Form</h1>
                     </div>
+                    <form className="client-search-form" onSubmit={onFormSubmit}>
 
+                    </form>
                 </div>
-
-
             </div>
         </div>
     )

@@ -12,6 +12,7 @@ import ClientSell from './components/client/client-sell';
 import ClientMoneyTransfer from './components/client/client-money-transfer';
 import ClientPastOrders from './components/client/client-past-orders';
 import TraderDashboard from './components/trader/trader-dashboard';
+import ClientSearch from './components/trader/trader-client-search';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path='/client-dashboard/orders' element={<ClientPastOrders />} />
           <Route path='/manager-dashboard' element={<ManagerDashboard />} />
           <Route path='/trader-dashboard' element={<TraderDashboard />} />
+          <Route path='/trader-dashboard/client-search' element={<ClientSearch />} />
         </Route>
 
       </Routes>

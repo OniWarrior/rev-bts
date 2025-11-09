@@ -148,3 +148,26 @@ export const cancelTransferOrTransaction = (orderOrTransfer, navigate) => async 
     }
 
 }
+
+
+// getTraderPortfolio: retrieve the total value of portfolio 
+// @dispatch: paramter to dispatch action types along with assigning payload.
+export const getTraderPortfolio = () => async (dispatch) => {
+    try {
+
+        // dispatch start of action
+        dispatch({ type: TRADER_START });
+
+        // make the api call to retrieve the portfolio value
+        const portfolioValue = await AxiosWithAuth().get("/api/users/trader-portfolio");
+
+        //dispatch success to reducer function
+        dispatch({ type: TRADER_SUCCESS, payload: portfolioValue.data });
+
+
+
+    } catch (err) {
+        // dispatch failure along with failure message
+        dispatch({ type: TRADER_FAILURE, payload: err.message });
+    }
+}

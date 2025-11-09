@@ -3,14 +3,18 @@ import { connect } from "react-redux";
 import LoggedInNavbar from "../logged-in-navbar";
 import { getClient } from "../../state/actions/trader-actions";
 import "../../styles/trader/client-search.css";
+import { useNavigate } from "react-router";
 
 const ClientSearch = (props) => {
 
+    // state var for navigation
+    const navigate = useNavigate();
+
     //handler for handling submission
     const onFormSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
-        props.getClient(client)
+        props.getClient(client, navigate);
     }
 
     return (

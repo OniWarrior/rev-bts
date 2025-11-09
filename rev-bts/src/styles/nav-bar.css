@@ -149,6 +149,54 @@
   * end of client nav bar stylings
   ********/
 
+  /*
+  *
+  * Styling for the Trader nav gar  
+  *
+  *********/
+
+  .btn-t-dashboard{
+    background-color: white;
+    background-image: url('../assets/dashboardimg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size:2em;
+    height:3em;
+    width:3em;
+    border-radius: 50%;
+
+  }
+
+  .btn-t-client-search{
+    background-color: white;
+    background-image: url('../assets/client-search-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size:2em;
+    height:3em;
+    width:3em;
+    border-radius: 50%;
+
+  }
+
+  .btn-t-cancel-log{
+    background-color: white;
+    background-image: url('../assets/cancel-order-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size:2em;
+    height:3em;
+    width:3em;
+    border-radius: 50%;
+  }
+
+  /*
+   * End of trader stylings
+   */
+
 
 /*
  * Rule set for reactivity of nav bar icons
@@ -269,7 +317,7 @@
 }
 
 .btn-c-transfer:hover{
-    animation: scale-up 0.4s forwards;;
+    animation: scale-up 0.4s forwards;
 }
 
 .btn-c-transfer:not(:hover){
@@ -279,6 +327,36 @@
 /*
  * end of client nav bar animations
  */
+
+ /*
+  * Animations for trader nav bar animations
+  */
+  .btn-t-dashboard:hover{
+    animation: scale-up 0.4s forwards;
+
+  }
+
+  .btn-t-dashboard:not(:hover){
+    animation: after-scale-up 0.4s ease-out;
+  }
+
+  .btn-t-client-search:hover{
+    animation: scale-up 0.4s forwards;
+
+  }
+
+  .btn-t-client-search:not(:hover){
+    animation: after-scale-up 0.4s ease-out;
+  }
+
+  .btn-t-cancel-log:hover{
+    animation: scale-up 0.4s forwards;
+
+  }
+
+  .btn-t-cancel-log:not(:hover){
+    animation: after-scale-up 0.4s ease-out;
+  }
 
 /*
  * Animation for nav bar icons

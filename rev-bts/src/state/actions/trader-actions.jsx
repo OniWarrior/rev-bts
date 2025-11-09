@@ -54,7 +54,7 @@ export const getClient = (client, navigate) => async (dispatch) => {
         dispatch({ type: TRADER_SUCCESS, payload: response.data });
 
         // navigate to search results
-        navigate("/trader-dashboard/trader-client-search/clients/search");
+        navigate("/trader-dashboard/client-search/clients/search");
 
     } catch (error) {
         // dispatch failure with failure message

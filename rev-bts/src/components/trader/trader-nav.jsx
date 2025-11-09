@@ -25,7 +25,7 @@ const TraderNav = (props) => {
     // handler func to navigate to client search
     const goToSearch = (e) => {
         e.preventDefault()
-        navigate("/trader-dashboard/trader-client-search");
+        navigate("/trader-dashboard/client-search");
     }
 
     // handler func to navigate to cancel log
@@ -55,4 +55,4 @@ const mapDispatchToProps = {
 }
 
 
-export default connect(mapDispatchToProps)(TraderNav);
+export default connect(null, mapDispatchToProps)(TraderNav);

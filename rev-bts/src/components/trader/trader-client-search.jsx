@@ -56,7 +56,8 @@ const ClientSearch = (props) => {
                                     id="first_name"
                                     type="text"
                                     name="first_name"
-                                    placeholder="Client's first name"
+                                    placeholder="Client's first name (optional)"
+                                    onChange={onInputChange}
                                 />
                             </div>
                             <div className="input-group last-name-group">
@@ -65,7 +66,8 @@ const ClientSearch = (props) => {
                                     id="last_name"
                                     type="text"
                                     name="last_name"
-                                    placeholder="Client's last name"
+                                    placeholder="Client's last name (optional)"
+                                    onChange={onInputChange}
                                 />
                             </div>
                             <div className="input-group email-group">
@@ -74,7 +76,8 @@ const ClientSearch = (props) => {
                                     id="email"
                                     type="text"
                                     name="email"
-                                    placeholder="Client's Email"
+                                    placeholder="Client's Email (Required)"
+                                    onChange={onInputChange}
                                     required
                                 />
                             </div>

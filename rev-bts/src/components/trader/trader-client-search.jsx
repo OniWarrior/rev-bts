@@ -30,7 +30,7 @@ const ClientSearch = (props) => {
 
     //handler function to handle change in input
     const onInputChange = (e) => {
-        //todo
+        setClient(e, Client_Search_Form_Schema);
     }
 
     //handler for handling submission

@@ -4,6 +4,8 @@ import LoggedInNavbar from "../logged-in-navbar";
 import { getClient } from "../../state/actions/trader-actions";
 import "../../styles/trader/client-search.css";
 import { useNavigate } from "react-router";
+import Client_Search_Form_Schema from "../../form-schemas/client-search-form-schema";
+import useFormValidation from '../../hooks/useFormValidation';
 
 const ClientSearch = (props) => {
 
@@ -22,6 +24,13 @@ const ClientSearch = (props) => {
         first_name: '',
         last_name: '',
         email: ''
+    }
+
+    const [client, errors, setClient] = useFormValidation(Client_Search_Form_Schema, initialValues, initialErrors);
+
+    //handler function to handle change in input
+    const onInputChange = (e) => {
+        //todo
     }
 
     //handler for handling submission

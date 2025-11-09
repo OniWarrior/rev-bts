@@ -32,7 +32,15 @@ const ClientSearch = (props) => {
                                     placeholder="Client's first name"
                                 />
                             </div>
-
+                            <div className="last-name-group">
+                                <h2>Last Name: </h2>
+                                <input
+                                    id="last_name"
+                                    type="text"
+                                    name="last_name"
+                                    placeholder="Client's last name"
+                                />
+                            </div>
                         </div>
 
                     </form>

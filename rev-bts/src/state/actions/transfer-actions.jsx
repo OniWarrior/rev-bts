@@ -17,7 +17,7 @@ export const fetchTransfers = (clientId) => async (dispatch) => {
         const transfers = await AxiosWithAuth().get(`/api/users/clients/${clientId}/payments`);
 
         // dispatch success to reducer and payload
-        dispatch({ type: TRANSFER_SUCCESS, payload: transfers });
+        dispatch({ type: TRANSFER_SUCCESS, payload: transfers.data });
 
     } catch (err) {
         // api call failure, dispatch to reducer

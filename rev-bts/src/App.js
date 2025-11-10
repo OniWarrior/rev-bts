@@ -14,6 +14,7 @@ import ClientPastOrders from './components/client/client-past-orders';
 import TraderDashboard from './components/trader/trader-dashboard';
 import ClientSearch from './components/trader/trader-client-search';
 import CancelLog from './components/trader/trader-cancel-log';
+import FoundClient from './components/trader/trader-found-client';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path='/trader-dashboard' element={<TraderDashboard />} />
           <Route path='/trader-dashboard/client-search' element={<ClientSearch />} />
           <Route path='/trader-dashboard/cancel-log' element={<CancelLog />} />
+          <Route path='/trader-dashboard/client-search/clients/search' element={<FoundClient />} />
         </Route>
 
       </Routes>

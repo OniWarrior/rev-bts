@@ -17,7 +17,7 @@ export const fetchTransactions = (navigate, clientId) => async (dispatch) => {
         const transactions = await AxiosWithAuth().get(`api/users/clients/${clientId}/transactions`);
 
         // dispatch success 
-        dispatch({ type: ORDER_SUCCESS, payload: transactions });
+        dispatch({ type: ORDER_SUCCESS, payload: transactions.data });
 
         // navigate to the transactions page
         navigate(`/trader-dashboard/trader-client-search/clients/${clientId}/transactions`);

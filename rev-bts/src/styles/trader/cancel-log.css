@@ -1,0 +1,25 @@
+.cancelled-list-header{
+    color:black;
+    background-color: white;
+    font-size: xx-large;
+    text-align: center;
+    height:10%;
+    border-bottom: 1px solid black;
+    box-shadow: 2px 3px 5px  black;
+}
+.cancelled-list{
+    background-color: white;   
+    height:100%;
+   
+}
+.cancelled-cards-group{
+    display: flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 1em;
+    padding-top:2em;
+    
+
+}

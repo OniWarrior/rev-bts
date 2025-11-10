@@ -13,7 +13,7 @@ import ClientMoneyTransfer from './components/client/client-money-transfer';
 import ClientPastOrders from './components/client/client-past-orders';
 import TraderDashboard from './components/trader/trader-dashboard';
 import ClientSearch from './components/trader/trader-client-search';
-
+import CancelLog from './components/trader/trader-cancel-log';
 
 function App() {
   return (
@@ -32,6 +32,7 @@ function App() {
           <Route path='/manager-dashboard' element={<ManagerDashboard />} />
           <Route path='/trader-dashboard' element={<TraderDashboard />} />
           <Route path='/trader-dashboard/client-search' element={<ClientSearch />} />
+          <Route path='/trader-dashboard/cancel-log' element={<CancelLog />} />
         </Route>
 
       </Routes>

@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-const Client_Search_Form_Schema = yup.object().Shape({
+const Client_Search_Form_Schema = yup.object().shape({
     first_name: yup.string().trim(),
     last_name: yup.string().trim(),
     email: yup.string()

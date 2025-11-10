@@ -48,7 +48,7 @@ export const getClient = (client, navigate) => async (dispatch) => {
 
     try {
         // make http request and save response 
-        const response = await AxiosWithAuth().post('/api/users/client/search', client);
+        const response = await AxiosWithAuth().post('/api/users/clients/search', client);
 
         // dispatch success along with response data
         dispatch({ type: TRADER_SUCCESS, payload: response.data });
@@ -59,6 +59,9 @@ export const getClient = (client, navigate) => async (dispatch) => {
     } catch (error) {
         // dispatch failure with failure message
         dispatch({ type: TRADER_FAILURE, payload: error.message });
+
+        // alert message that appears once the failure occurs
+        alert(`Client not found. ${error.message}`)
     }
 }
 

@@ -50,8 +50,13 @@ const ClientSearch = (props) => {
                     </div>
                     <form className="client-search-form" onSubmit={onFormSubmit}>
                         <div className="client-search-input-group">
-                            <div className="input-group first-name-group">
+                            <div className="input-group-labels ">
                                 <h2>First Name: </h2>
+                                <h2>Last Name: </h2>
+                                <h2>Email: </h2>
+
+                            </div>
+                            <div className="input-group-txt-bxs ">
                                 <input
                                     id="first_name"
                                     type="text"
@@ -59,9 +64,6 @@ const ClientSearch = (props) => {
                                     placeholder="Client's first name (optional)"
                                     onChange={onInputChange}
                                 />
-                            </div>
-                            <div className="input-group last-name-group">
-                                <h2>Last Name: </h2>
                                 <input
                                     id="last_name"
                                     type="text"
@@ -69,9 +71,6 @@ const ClientSearch = (props) => {
                                     placeholder="Client's last name (optional)"
                                     onChange={onInputChange}
                                 />
-                            </div>
-                            <div className="input-group email-group">
-                                <h2>Email: </h2>
                                 <input
                                     id="email"
                                     type="text"
@@ -84,8 +83,8 @@ const ClientSearch = (props) => {
                                     <p>{errors.email}</p>
                                 </div>
                             </div>
-                            <button className="btn-c-search" type="submit">Find Client</button>
                         </div>
+                        <button className="btn-c-search" type="submit">Find Client</button>
 
                     </form>
                 </div>

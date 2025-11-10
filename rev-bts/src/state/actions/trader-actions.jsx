@@ -71,10 +71,11 @@ export const getClient = (client, navigate) => async (dispatch) => {
 // @navigate: navigation param used to navigate to trader dashboard after bitcoin purchase.
 // @dispatch: dispatch actions and payloads.
 export const postTraderBuyBitcoinTransaction = (clientId, navigate) => async (dispatch) => {
-    // dispatch start of action
-    dispatch({ type: TRADER_START });
+
 
     try {
+        // dispatch start of action
+        dispatch({ type: TRADER_START });
 
         // make http request and save response 
         const response = await AxiosWithAuth().post('/api/user/TraderBuyBitcoin', clientId);

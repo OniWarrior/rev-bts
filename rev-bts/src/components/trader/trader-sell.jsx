@@ -49,6 +49,20 @@ const TraderSell = (props) => {
         props.postTraderSellBitcoinTransaction(formattedRequest, navigate);
     }
 
+
+    return (
+        <div className="t-sell">
+            <LoggedInNav />
+            <div className="t-sell-main">
+                <div className="t-sell-container">
+                    <div className="t-sell-header">
+                        <h1>Sell Bitcoin</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+
 }
 
 const mapStateToProps = (state) => {

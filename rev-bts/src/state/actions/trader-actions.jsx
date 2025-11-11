@@ -98,11 +98,11 @@ export const postTraderBuyBitcoinTransaction = (formattedRequest, navigate) => a
 }
 
 // postTraderSellBitcoinTransaction: post selling some bitcoin on behalf of the client
-// @clientId: parameter of the id of the client. this is used to sell bitcoin for client
+// @formattedRequest: parameter of the formatted request which includes the order. this is used to sell bitcoin for client
 // @navigate: navigation param used to navigate to trader dashboard after bitcoin sell.
 // @dispatch: dispatch actions and payloads. 
 
-export const postTraderSellBitcoinTransaction = (clientId, navigate) => async (dispatch) => {
+export const postTraderSellBitcoinTransaction = (formattedRequest, navigate) => async (dispatch) => {
 
 
     try {
@@ -110,7 +110,7 @@ export const postTraderSellBitcoinTransaction = (clientId, navigate) => async (d
         dispatch({ type: TRADER_START });
 
         // make http request and save response 
-        const response = await AxiosWithAuth().post('/api/users/trader-sell-bitcoin', clientId);
+        const response = await AxiosWithAuth().post('/api/users/trader-sell-bitcoin', formattedRequest);
 
         // dispatch success and assign response data
         dispatch({ type: TRADER_SUCCESS, payload: response.data });

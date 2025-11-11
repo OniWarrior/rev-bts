@@ -43,7 +43,8 @@ const TraderSell = (props) => {
         // format the request body to include bitcoin price
         const formattedRequest = {
             ...sell,
-            Bitcoin_price: props.bitcoin.price
+            Bitcoin_price: props.bitcoin.price,
+            email: props.trader.email  // (note): even though it's in trader obj, it's the email of client found.
         }
 
         props.postTraderSellBitcoinTransaction(formattedRequest, navigate);
@@ -57,6 +58,40 @@ const TraderSell = (props) => {
                 <div className="t-sell-container">
                     <div className="t-sell-header">
                         <h1>Sell Bitcoin</h1>
+                    </div>
+                    <div className="t-sell-upper-card-group">
+                        <div className="purchase-big-card-form-container">
+                            <form className="purchase-form" onSubmit={onFormSubmit}>
+                                <div className="bitcoin-price-group">
+                                    <h2>Bitcoin Price</h2>
+                                    <p>$ {props.bitcoin.price}</p>
+                                </div>
+                                <div className="bitcoin-amount-group">
+                                    <h2>BTC Amount</h2>
+                                    <input
+                                        id="Bitcoin_balance"
+                                        type="text"
+                                        name="Bitcoin_balance"
+                                        placeholder="BTC amount to sell"
+                                        required
+                                        onChange={onFormChange}
+                                    />
+                                    <div className="error" >
+                                        <p>{errors.Bitcoin_balance}</p>
+                                    </div>
+                                </div>
+
+                                <button
+                                    type='submit'
+                                    className='c-purchase-submit'
+                                >
+                                    Sell BTC
+                                </button>
+                            </form>
+
+
+                        </div>
+
                     </div>
                 </div>
             </div>

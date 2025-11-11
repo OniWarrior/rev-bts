@@ -5,12 +5,7 @@ const Trader_Sell_Form_Schema = yup.object().shape({
         .required('The amount of bitcoin must be entered.')
         .typeError('You must specify a number')
         .min(0.01, 'The amount cannot be negative'),
-    Bitcoin_price: yup.number(),
-    email: yup.string()
-        .trim()
-        .required()
-        .required("Email/Password is required. Please fill out field")
-        .email()
+    Bitcoin_price: yup.number()
 
 })
 

@@ -28,10 +28,11 @@ const FoundClient = (props) => {
         props.postTraderBuyBitcoinTransaction(formattedRequest, navigate)
     }
 
-    // get price of bitcoin then nav to trader sell
+    //  nav to trader sell
     const goToSell = (e) => {
         e.preventDefault()
-        props.getLatestPriceForTSell(navigate, props.trader.client_id)
+        navigate('/trader-dashboard/client-search/clients/search/t-sell')
+
     }
 
     // get transfers and transactions and nav to cancel transfer and/or transacs

@@ -81,7 +81,7 @@ export const getLatestPriceForCSell = (navigate) => async (dispatch) => {
 
 // getLatestPriceForTBuy: gets the latest price of bitcoin for the trader
 // with making a purchase on behalf of a client
-export const getLatestPriceForTBuy = (navigate, clientId) => async (dispatch) => {
+export const getLatestPriceForTBuy = () => async (dispatch) => {
     try {
         // dispatch start of action to reducer
         dispatch({ type: BITCOIN_START });
@@ -92,8 +92,7 @@ export const getLatestPriceForTBuy = (navigate, clientId) => async (dispatch) =>
         // api call successful, dispatch payload and success message
         dispatch({ type: BITCOIN_SUCCESS, payload: price.data.price });
 
-        // navigate to the buy bitcoin page for the trader using client id
-        navigate(`/trader-dashboard/client-search/clients/${clientId}/trader-buy-bitcoin`);
+
 
 
     } catch (err) {

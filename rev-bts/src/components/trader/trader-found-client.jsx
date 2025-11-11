@@ -1,22 +1,31 @@
 import { connect } from "react-redux"
-import React from "react";
+import React, { useEffect } from "react";
 import LoggedInNav from "../logged-in-navbar";
 import '../../styles/trader/found-client.css';
 import { useNavigate } from "react-router";
-import { getLatestPriceForTBuy } from "../../state/actions/bitcoin-actions";
-import { getLatestPriceForTSell } from "../../state/actions/bitcoin-actions";
+import { getLatestBitcoinPrice } from "../../state/actions/bitcoin-actions";
 import { fetchTransactions } from "../../state/actions/order-actions";
 import { fetchTransfers } from "../../state/actions/transfer-actions";
+import { postTraderBuyBitcoinTransaction } from "../../state/actions/trader-actions";
 
 
 const FoundClient = (props) => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
+    useEffect(() => {
+        props.getLatestBitcoinPrice()
+    }, [])
 
-    // get price of bitcoin then nav to trader buy
+    // get price of bitcoin then buy bitcoin
     const goToBuy = (e) => {
-        e.preventDefault()
-        props.getLatestPriceForTBuy(navigate, props.trader.client_id)
+        e.preventDefault();
+
+        const formattedRequest = {
+            email: props.trader.email,
+            Bitcoin_price: props.bitcoin.price
+        }
+
+        props.postTraderBuyBitcoinTransaction(formattedRequest, navigate)
     }
 
     // get price of bitcoin then nav to trader sell
@@ -86,16 +95,19 @@ const mapStateToProps = (state) => {
     return {
         trader: state.traderReducer.trader,
         loading: state.traderReducer.loading,
-        error: state.traderReducer.error
+        error: state.traderReducer.error,
+        bitcoin: state.bitcoinReducer.bitcoin,
+        b_loading: state.bitcoinReducer.loading,
+        b_error: state.bitcoinReducer.error
     }
 
 }
 
 const mapDispatchToProps = {
-    getLatestPriceForTBuy,
-    getLatestPriceForTSell,
+    getLatestBitcoinPrice,
     fetchTransactions,
-    fetchTransfers
+    fetchTransfers,
+    postTraderBuyBitcoinTransaction
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(FoundClient)

@@ -9,6 +9,45 @@ import useFormValidation from "../../hooks/useFormValidation";
 
 
 const TraderSell = (props) => {
+    const navigate = useNavigate();
+
+
+    // --------------Initial values and errors objs
+    const initialValues = {
+        Bitcoin_balance: '',
+        Bitcoin_price: '',
+        email: ''
+    }
+
+    const initialErrors = {
+        Bitcoin_balance: '',
+        Bitcoin_price: '',
+        email: ''
+
+    }
+
+    //--------------------------------------------
+
+    const [sell, errors, setSell] = useFormValidation(Trader_Sell_Form_Schema, initialValues, initialErrors);
+
+    //handler to deal with changes in form input
+    const onFormChange = (e) => {
+
+        setSell(e, Trader_Sell_Form_Schema);
+    }
+
+    // handler to deal with form submission
+    const onFormSubmit = (e) => {
+        e.preventDefault();
+
+        // format the request body to include bitcoin price
+        const formattedRequest = {
+            ...sell,
+            Bitcoin_price: props.bitcoin.price
+        }
+
+        props.postTraderSellBitcoinTransaction(formattedRequest, navigate);
+    }
 
 }
 

@@ -70,14 +70,15 @@ export const getClient = (client, navigate) => async (dispatch) => {
 // @clientId: parameter of the id of the client. this is used to purchase bitcoin for client
 // @navigate: navigation param used to navigate to trader dashboard after bitcoin purchase.
 // @dispatch: dispatch actions and payloads.
-export const postTraderBuyBitcoinTransaction = (clientId, navigate) => async (dispatch) => {
-    // dispatch start of action
-    dispatch({ type: TRADER_START });
+export const postTraderBuyBitcoinTransaction = (formattedRequest, navigate) => async (dispatch) => {
+
 
     try {
+        // dispatch start of action
+        dispatch({ type: TRADER_START });
 
         // make http request and save response 
-        const response = await AxiosWithAuth().post('/api/user/TraderBuyBitcoin', clientId);
+        const response = await AxiosWithAuth().post('/api/users/trader-buy-bitcoin', formattedRequest);
 
         // dispatch success and assign response data
         dispatch({ type: TRADER_SUCCESS, payload: response.data });
@@ -92,6 +93,7 @@ export const postTraderBuyBitcoinTransaction = (clientId, navigate) => async (di
     } catch (error) {
         // dispatch failure action and failure message
         dispatch({ type: TRADER_FAILURE, payload: error.message });
+        alert(`${error.message}`);
     }
 }
 
@@ -101,13 +103,14 @@ export const postTraderBuyBitcoinTransaction = (clientId, navigate) => async (di
 // @dispatch: dispatch actions and payloads. 
 
 export const postTraderSellBitcoinTransaction = (clientId, navigate) => async (dispatch) => {
-    // dispatch start of action
-    dispatch({ type: TRADER_START });
+
 
     try {
+        // dispatch start of action
+        dispatch({ type: TRADER_START });
 
         // make http request and save response 
-        const response = await AxiosWithAuth().post('/api/user/TraderSellBitcoin', clientId);
+        const response = await AxiosWithAuth().post('/api/users/trader-sell-bitcoin', clientId);
 
         // dispatch success and assign response data
         dispatch({ type: TRADER_SUCCESS, payload: response.data });
@@ -122,6 +125,7 @@ export const postTraderSellBitcoinTransaction = (clientId, navigate) => async (d
     } catch (error) {
         // dispatch failure action and failure message
         dispatch({ type: TRADER_FAILURE, payload: error.message });
+        alert(`${error.message}`);
     }
 }
 
@@ -138,7 +142,7 @@ export const cancelTransferOrTransaction = (orderOrTransfer, navigate) => async 
         const canceledOrderOrTransfer = await AxiosWithAuth().put(`/api/users/cancel-payment-or-transfer`, orderOrTransfer);
 
         // dispatch success to reducer
-        dispatch({ type: TRADER_SUCCESS, payload: cancelTransferOrTransaction });
+        dispatch({ type: TRADER_SUCCESS, payload: canceledOrderOrTransfer.data });
 
         // navigate to trader dashboard
         navigate("/trader-dashboard");

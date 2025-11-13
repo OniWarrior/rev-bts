@@ -15,12 +15,13 @@ export const SIGNUP_FAILURE = "SIGNUP_FAILURE";
 // @signup: parameter that is the signup object that contains registration information
 
 export const postRegisterAccount = (navigate, signup) => async (dispatch) => {
-    // dispatch the start of an action
-    dispatch({ type: SIGNUP_START });
+
     try {
+        // dispatch the start of an action
+        dispatch({ type: SIGNUP_START });
 
         // try to post, if successful, store the response data
-        const response = await axios.post("https://bitcoin-transaction-system-be-72349974fde7.herokuapp.com/api/auth/Signup", signup);
+        const response = await axios.post("http://localhost:8000/api/auth/signup", signup);
 
         // dispatch the success of the action and send the payload
         dispatch({ type: SIGNUP_SUCCESS, payload: response.data });

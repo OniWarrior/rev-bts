@@ -7,7 +7,16 @@ const ClientPastOrders = (props) => {
 
 
     if (!props.client || props.client.length === 0) {
-        return <div>No Past Orders</div>
+        return (<div>
+            <div className="past-orders-container">
+                <LoggedInNav />
+                <div className="past-orders-list">
+                    <div className="past-orders-header">
+                        <h1>No past orders</h1>
+                    </div>
+                </div>
+            </div>
+        </div>)
     }
 
     return (

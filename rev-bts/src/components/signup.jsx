@@ -4,14 +4,19 @@
  * Desc  : Single file component for the signup page
  */
 
-import React from "react";
+
 import NavBar from "./navbar";
 import '../styles/signup.css';
 import useFormValidation from "../hooks/useFormValidation";
-import { useState } from "react";
+import { connect } from 'react-redux';
+import { useNavigate } from "react-router";
 import Signup_Form_Schema from "../form-schemas/signup-form-schema";
+import { postRegisterAccount } from "../state/actions/signup-actions";
 
-const Signup = () => {
+const Signup = (props) => {
+
+    // navigation for after form submission
+    const navigate = useNavigate();
 
     // object for initial values of text boxes
     const initialValues = {
@@ -52,6 +57,14 @@ const Signup = () => {
         setSignup(event, Signup_Form_Schema);
     }
 
+    // handler for form submission: create signup account
+    const onFormSubmission = (e) => {
+        e.preventDefault();
+
+        // make api call to post a new account
+        props.postRegisterAccount(navigate, signup);
+    }
+
 
     return (
 
@@ -59,7 +72,7 @@ const Signup = () => {
             <NavBar />
             <div className='signup-box'>
                 <div className='signup-form-container'>
-                    <form className='signup-form' >
+                    <form className='signup-form' onSubmit={onFormSubmission}>
                         <h2>Signup</h2>
                         <br />
 
@@ -285,4 +298,17 @@ const Signup = () => {
 
 }
 
-export default Signup;
+
+const mapStateToProps = (state) => {
+    return {
+        signup: state.signupReducer.signup,
+        loading: state.signupReducer.loading,
+        error: state.signupReducer.error
+    }
+}
+
+const mapDispatchToProps = {
+    postRegisterAccount
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);

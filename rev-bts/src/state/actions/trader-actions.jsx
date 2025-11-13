@@ -153,6 +153,7 @@ export const cancelTransferOrTransaction = (orderOrTransfer, navigate) => async 
     } catch (err) {
         // api call fails dispatch failure to reducer
         dispatch({ type: TRADER_FAILURE, payload: err.message });
+        alert(`${err.message}`);
     }
 
 }

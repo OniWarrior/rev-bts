@@ -1,0 +1,42 @@
+.order-transfer-header{
+    color:black;
+    background-color: white;
+    font-size: xx-large;
+    text-align: center;
+    height:10%;
+    border-bottom: 1px solid black;
+    box-shadow: 2px 3px 5px  black;
+}
+.order-transfer-main{
+    background-color: white;   
+    height:100%;
+   
+}
+.order-transfer-cards-group{
+    display: flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 1em;
+    padding-top:2em;
+    
+    
+
+}
+
+.card{
+    height:50%;
+    width:20%;
+    
+    border:1px solid black;
+    border-radius: 20px;
+    box-shadow: 1px 2px 5px  grey;
+    text-align: center;
+    padding-bottom: 1em;
+    
+}
+
+.card h2{
+    font-weight: bolder;
+}

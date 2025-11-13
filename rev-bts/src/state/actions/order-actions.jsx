@@ -6,7 +6,7 @@ export const ORDER_FAILURE = "ORDER_FAILURE";
 
 
 // fetchTransactions: fetch all past orders made by the clients
-export const fetchTransactions = (navigate, clientId) => async (dispatch) => {
+export const fetchTransactions = (clientId) => async (dispatch) => {
 
     try {
 
@@ -19,8 +19,7 @@ export const fetchTransactions = (navigate, clientId) => async (dispatch) => {
         // dispatch success 
         dispatch({ type: ORDER_SUCCESS, payload: transactions.data });
 
-        // navigate to the transactions page
-        navigate(`/trader-dashboard/trader-client-search/clients/${clientId}/transactions`);
+
 
     } catch (err) {
         // api call is a failure if this point is reached

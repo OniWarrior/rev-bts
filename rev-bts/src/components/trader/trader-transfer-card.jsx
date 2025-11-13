@@ -1,10 +1,11 @@
-import React from "react";
-import '../../styles/trader/transfer-card.css';
 
 
-const TraderTransferCard = (props) => {
+
+
+const TransferCard = (props) => {
 
     // format date
+
     const formattedDate = props.transfer.date.slice(0, 10)
     return (
         <div>
@@ -28,4 +29,4 @@ const TraderTransferCard = (props) => {
 }
 
 
-export default TraderTransferCard
+export default TransferCard

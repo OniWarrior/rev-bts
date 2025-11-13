@@ -16,6 +16,7 @@ import ClientSearch from './components/trader/trader-client-search';
 import CancelLog from './components/trader/trader-cancel-log';
 import FoundClient from './components/trader/trader-found-client';
 import TraderSell from './components/trader/trader-sell';
+import CancelForm from './components/trader/trader-cancel-form';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path='/trader-dashboard/cancel-log' element={<CancelLog />} />
           <Route path='/trader-dashboard/client-search/clients/search' element={<FoundClient />} />
           <Route path='/trader-dashboard/client-search/clients/search/t-sell' element={<TraderSell />} />
+          <Route path='/trader-dashboard/client-search/clients/search/cancel-order-transac' element={<CancelForm />} />
         </Route>
 
       </Routes>

@@ -5,7 +5,7 @@ import {
 } from "../actions/transfer-actions";
 
 const initialState = {
-    transfer: {},
+    transfers: {},
     loading: false,
     error: ''
 }
@@ -16,7 +16,7 @@ const transferReducer = (state = initialState, action) => {
         case TRANSFER_START:
             return { ...state, loading: true };
         case TRANSFER_SUCCESS:
-            return { ...state, transfer: action.payload, loading: false };
+            return { ...state, transfers: action.payload, loading: false };
         case TRANSFER_FAILURE:
             return { ...state, error: action.payload, loading: false };
         default:

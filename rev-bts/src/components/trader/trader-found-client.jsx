@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import LoggedInNav from "../logged-in-navbar";
 import '../../styles/trader/found-client.css';
 import { useNavigate } from "react-router";
@@ -14,6 +14,8 @@ const FoundClient = (props) => {
 
     useEffect(() => {
         props.getLatestBitcoinPrice()
+        props.fetchTransactions(props.trader.client_id)
+        props.fetchTransfers(props.trader.client_id)
     }, [])
 
     // get price of bitcoin then buy bitcoin
@@ -39,9 +41,8 @@ const FoundClient = (props) => {
 
     const goToCancel = (e) => {
         e.preventDefault()
-        props.fetchTransfers(props.trader.client_id);
-        props.fetchTransactions(navigate, props.trader.client_id);
-
+        // navigate to the transactions page
+        navigate(`/trader-dashboard/client-search/clients/search/cancel-order-transac`);
 
     }
 

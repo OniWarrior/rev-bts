@@ -13,6 +13,8 @@ const Home = () => {
     return (
         <div className="home-container">
             <NavBar />
+            <br></br>
+            <div className="mobile-hero-banner"></div>
             <div className="home-header">
                 <h1>Bitcoin Transaction System</h1>
             </div>

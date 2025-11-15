@@ -36,3 +36,43 @@
     width: 30%;
     font-size: x-large;
 }
+
+
+@media screen and (max-width: 800px) {
+  .main-text {
+    
+    margin:auto;
+   
+    width:100%;
+    padding-left:0%;
+    padding-top:4%;
+    
+    
+    
+  }
+  .home-header{
+    
+    
+    padding-left:0%;
+    padding-top:10%;
+  }
+
+  .home-container{
+    background-image: none;
+   
+       
+  }
+
+  .mobile-hero-banner{
+    background-image: url('../assets/bitcoin_head_small.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:contain;
+    height: 70vh;
+    border-radius: 20px;
+    border:1px solid rgba(255,255,255,0.7);
+    
+    
+  }
+}

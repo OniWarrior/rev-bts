@@ -46,7 +46,7 @@ const Login = (props) => {
     }
 
     return (
-        <div>
+        <div >
             <NavBar />
             <div className="login-box">
                 <div className="login-form-container">
@@ -61,10 +61,10 @@ const Login = (props) => {
                                 <label className="label-input-group" htmlFor="password">
                                     Password:</label>
                             </div>
-                            <div className="login-txt-box-group">
+                            <div className=" login-txt-box-group">
 
 
-                                <input className='email-box'
+                                <input className='txt-box email-box'
                                     id='email'
                                     type='text'
                                     name='email'
@@ -79,7 +79,7 @@ const Login = (props) => {
                                 </div>
 
 
-                                <input className="password-code-box"
+                                <input className="txt-box password-code-box"
                                     id='password'
                                     type="text"
                                     name="password"

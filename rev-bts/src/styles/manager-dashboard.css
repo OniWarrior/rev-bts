@@ -64,6 +64,14 @@
 }
 
 .daily-submit{
+    width: 100px;
+    height:30px;
+    background-color: goldenrod;
+    color:white;
+    border-radius: 20px;
+}
+
+.weekly-submit{
      width: 100px;
     height:30px;
     background-color: goldenrod;
@@ -80,4 +88,44 @@
 
 .error{
     color:red;
+}
+
+@media screen and (max-width:600px) {
+    .manager-dashboard-container{
+        margin-top: 3em;
+        min-width:20em;
+        min-height: 45em;
+    }
+
+    .big-card{
+        min-height: 8em;
+    }
+    .big-card-headers{
+        text-align: center;
+        width: 100%;
+    }
+
+    .weekly-form{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        
+    }
+    .big-card-header-values{
+        text-align: center;
+        
+    }
+    .weekly-submit{
+        text-align: center;
+    }
+
+    .manager-weekly-card{
+        min-height:14em;
+    }
+
+    .upper-card-group{
+        min-height: 40em;
+    }
+   
+    
 }

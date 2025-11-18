@@ -50,12 +50,32 @@ const TraderDashboard = (props) => {
                         <div className="t-big-card client-holdings-card">
                             <div className="big-card-headers">
                                 <h2>Portfolio Total Value</h2>
-                                <h2>USD Comm Pay</h2>
-                                <h2>Bitcoin Comm Pay</h2>
+
                             </div>
                             <div className="big-card-header-values">
                                 <p>$ {props.trader.portfolioValue}</p>
+
+                            </div>
+                        </div>
+                        <div className="t-big-card client-holdings-card">
+                            <div className="big-card-headers">
+
+                                <h2>USD Comm Pay</h2>
+
+                            </div>
+                            <div className="big-card-header-values">
+
                                 <p>$ {props.trader.balance}</p>
+
+                            </div>
+                        </div>
+                        <div className="t-big-card client-holdings-card">
+                            <div className="big-card-headers">
+
+                                <h2>Bitcoin Comm Pay</h2>
+                            </div>
+                            <div className="big-card-header-values">
+
                                 <p>BTC {props.trader.wallet}</p>
                             </div>
                         </div>

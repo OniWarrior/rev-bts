@@ -13,3 +13,11 @@
 .cancel-card h2{
     font-weight: bolder;
 }
+
+
+@media screen and (max-width:600px){
+    .cancel-card{
+        width:30%;
+    }
+    
+}

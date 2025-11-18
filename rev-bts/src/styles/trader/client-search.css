@@ -73,3 +73,23 @@
 .error{
     color:red;
 }
+
+@media screen and (max-width:600px){
+    .client-search-header{
+        min-height: 2em;
+    }
+
+    .input-group-txt-bxs{
+        min-width:6em;
+        row-gap: 1.5em;
+
+    }
+    .input-group-labels{
+        row-gap: 1em;
+        min-height: 5em;
+    }
+
+    .client-search-input-group{
+        min-width:10em;
+    }
+}

@@ -87,18 +87,35 @@ const ClientDashBoard = (props) => {
                         <h1> Client Dash-Board</h1>
                     </div>
                     <div className="c-upper-card-group">
-                        <div className="c-big-card client-holdings-card">
+
+                        <div className=" c-big-card client-holdings-card">
                             <div className="big-card-headers">
                                 <h2>Portfolio Total Value</h2>
-                                <h2>Purchase Power</h2>
-                                <h2>Bitcoin Holdings</h2>
+
                             </div>
                             <div className="big-card-header-values">
                                 <p>$ {props.client.portfolioValue}</p>
-                                <p>$ {props.client.balance}</p>
-                                <p>BTC {props.client.wallet}</p>
                             </div>
 
+                        </div>
+                        <div className=" c-big-card client-holdings-card">
+                            <div className="big-card-headers">
+                                <h2>Purchasing Power</h2>
+
+                            </div>
+                            <div className="big-card-header-values">
+                                <p>$ {props.client.balance}</p>
+                            </div>
+
+                        </div>
+                        <div className=" c-big-card client-holdings-card">
+                            <div className="big-card-headers">
+                                <h2>Bitcoin Holdings</h2>
+
+                            </div>
+                            <div className="big-card-header-values">
+                                <p>BTC {props.client.wallet}</p>
+                            </div>
 
                         </div>
                         <div className="c-big-card bitcoin-price-card">

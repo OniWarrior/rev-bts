@@ -69,6 +69,7 @@ const Login = (props) => {
                                     type='text'
                                     name='email'
                                     placeholder='email'
+                                    required
                                     onChange={change}
                                 />
 
@@ -84,6 +85,7 @@ const Login = (props) => {
                                     type="text"
                                     name="password"
                                     placeholder="Password"
+                                    required
                                     onChange={change}
                                 />
 

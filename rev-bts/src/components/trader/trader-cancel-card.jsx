@@ -11,7 +11,7 @@ const CancelCard = (props) => {
     const formattedDate = props.trader.date.slice(0, 10)
     return (
         <div className="cancel-card">
-            <h2>Cancelled Order/Transaction</h2>
+            <h2>Cancelled</h2>
             <h3>Log id</h3>
             <p>{props.trader.log_id}</p>
             <h3>Order id</h3>

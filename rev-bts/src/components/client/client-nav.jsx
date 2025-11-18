@@ -7,10 +7,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import {
-    getBitcoinWallet,
-    getPastOrders,
-    getPortfolio
-
+    getPastOrders
 } from "../../state/actions/client-actions";
 import {
     getLatestPriceForCPurchase,
@@ -41,14 +38,7 @@ const ClientNav = (props) => {
         navigate("/client-dashboard");
     }
 
-    // handler func to handle the retrieval of the client's bitcoin wallet
-    const getBitcoinWallet = (e) => {
-        e.preventDefault();
 
-        // make api call to get the amount of bitcoin in wallet
-        props.getBitcoinWallet();
-        props.getPortfolio()
-    }
 
     // handler func to handle navigation to buy bitcoin
     const goToBuy = (e) => {
@@ -87,7 +77,6 @@ const ClientNav = (props) => {
         <div className="nav-container">
             <nav className="nav-row">
                 <div className="btn-c-dashboard" onClick={goToDash}></div>
-                <div className="btn-c-wallet" onClick={getBitcoinWallet}></div>
                 <div className="btn-c-buy" onClick={goToBuy}></div>
                 <div className="btn-c-sell" onClick={goToSell}></div>
                 <div className="btn-c-orders" onClick={goToOrders}></div>
@@ -107,9 +96,7 @@ const ClientNav = (props) => {
 const mapDispatchToProps = {
     getLatestPriceForCPurchase,
     getLatestPriceForCSell,
-    getBitcoinWallet,
-    getPastOrders,
-    getPortfolio
+    getPastOrders
 }
 
 export default connect(null, mapDispatchToProps)(ClientNav);

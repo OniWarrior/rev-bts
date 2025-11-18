@@ -70,7 +70,8 @@
     height:50%;
     justify-content: center;
     align-items: center;
-     box-shadow: 1px 2px 5px  grey;
+    box-shadow: 1px 2px 5px  grey;
+    text-align: center;
    
     
 }
@@ -98,6 +99,9 @@
 
 }
 
+.mobile{
+    visibility: hidden;
+}
 
 
 /*
@@ -136,5 +140,20 @@
     to{
         transform: scale(1);
     }
+    
+}
+
+@media screen and (max-width:600px) {
+
+    .client-dashboard-container{
+        min-width: 20em;
+        
+    }
+
+    .small-card{
+        min-height:8em;
+    }
+
+    
     
 }

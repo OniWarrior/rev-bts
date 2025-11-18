@@ -74,7 +74,8 @@
 .big-card-headers{
     display: flex;
     flex-direction: row;
-    height:50%;    
+    height:50%;   
+    width:100%; 
     color:black;
     justify-content: space-evenly;
     align-items: center;
@@ -130,6 +131,19 @@
     }
     to{
         transform: scale(1);
+    }
+    
+}
+
+@media screen and (max-width:600px) {
+    .trader-dashboard-header{
+        height:15%;
+    }
+
+    .trader-dashboard-container{
+        margin-top:2em;
+        height:100%;
+        width:100%;
     }
     
 }

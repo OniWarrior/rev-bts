@@ -196,7 +196,7 @@ const ManagerDashboard = (props) => {
                                     </div>
                                     <button
                                         type='submit'
-                                        className='daily-submit'
+                                        className='weekly-submit'
                                     >
                                         Submit
                                     </button>

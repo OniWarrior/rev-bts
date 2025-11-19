@@ -262,7 +262,7 @@ const Signup = (props) => {
                             />
                         </label>
 
-                        <label className='label-input-group' htmlFor='Client'>
+                        <label className='label-input-group' htmlFor='Trader'>
                             Trader
                             <input className='form-check-input'
                                 id='Trader'

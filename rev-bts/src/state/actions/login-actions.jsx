@@ -26,7 +26,7 @@ export const postLogin = (navigate, login) => async (dispatch) => {
 
 
         // execute the api call and store the response 
-        const response = await axios.post("http://localhost:8000/api/auth/login", login);
+        const response = await axios.post("https://bitcoin-transaction-system-be-72349974fde7.herokuapp.com/api/auth/login", login);
 
         // dispatch success along with the success payload
         dispatch({ type: LOGIN_SUCCESS, payload: response.data });

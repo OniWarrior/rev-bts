@@ -21,7 +21,7 @@ export const postRegisterAccount = (navigate, signup) => async (dispatch) => {
         dispatch({ type: SIGNUP_START });
 
         // try to post, if successful, store the response data
-        const response = await axios.post("http://localhost:8000/api/auth/signup", signup);
+        const response = await axios.post("https://bitcoin-transaction-system-be-72349974fde7.herokuapp.com/api/auth/signup", signup);
 
         // dispatch the success of the action and send the payload
         dispatch({ type: SIGNUP_SUCCESS, payload: response.data });

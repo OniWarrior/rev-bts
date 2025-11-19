@@ -106,6 +106,7 @@ const Signup = (props) => {
                                     name="first_name"
                                     placeholder='first name'
                                     onChange={change}
+                                    required
 
 
                                 />
@@ -122,6 +123,7 @@ const Signup = (props) => {
                                     name='last_name'
                                     placeholder='last name'
                                     onChange={change}
+                                    required
 
                                 />
 
@@ -138,6 +140,7 @@ const Signup = (props) => {
                                     name='phone_num'
                                     placeholder='phone number'
                                     onChange={change}
+                                    required
                                 />
 
 
@@ -152,6 +155,7 @@ const Signup = (props) => {
                                     name='cell_num'
                                     placeholder='cell number'
                                     onChange={change}
+                                    required
                                 />
 
 
@@ -166,6 +170,7 @@ const Signup = (props) => {
                                     name='email'
                                     placeholder='email'
                                     onChange={change}
+                                    required
                                 />
 
 
@@ -181,6 +186,7 @@ const Signup = (props) => {
                                     name='city'
                                     placeholder='city'
                                     onChange={change}
+                                    required
                                 />
 
 
@@ -195,6 +201,7 @@ const Signup = (props) => {
                                     name='state'
                                     placeholder='state'
                                     onChange={change}
+                                    required
                                 />
 
 
@@ -209,6 +216,7 @@ const Signup = (props) => {
                                     name='street_addr'
                                     placeholder='Street Address'
                                     onChange={change}
+                                    required
                                 />
 
 
@@ -223,6 +231,7 @@ const Signup = (props) => {
                                     name='zip_code'
                                     placeholder='zip code'
                                     onChange={change}
+                                    required
                                 />
 
 
@@ -236,6 +245,7 @@ const Signup = (props) => {
                                     name="password"
                                     placeholder="Password"
                                     onChange={change}
+                                    required
                                 />
 
                                 <div className="errors">
@@ -259,6 +269,7 @@ const Signup = (props) => {
                                 name='user_type'
                                 value='Client'
                                 onChange={change}
+                                defaultValue="Client"
                             />
                         </label>
 

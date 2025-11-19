@@ -29,10 +29,16 @@ export const postRegisterAccount = (navigate, signup) => async (dispatch) => {
         // navigate to the login page
         navigate('/login');
 
+        // success message after successful creation of account
+        alert(`Successful creation of account`);
+
     } catch (error) {
 
         // dispatch failure along with the failure message from the server.
         dispatch({ type: SIGNUP_FAILURE, payload: error.message });
+
+        // failure message is displayed
+        alert(`Error: ${error.message}`);
     }
 }
 

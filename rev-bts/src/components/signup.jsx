@@ -251,7 +251,7 @@ const Signup = (props) => {
 
                         </div>
 
-                        <label className='label-input-group' htmlFor='user_type'>
+                        <label className='label-input-group' htmlFor='Client'>
                             Client
                             <input className='form-check-input'
                                 id='Client'
@@ -262,7 +262,7 @@ const Signup = (props) => {
                             />
                         </label>
 
-                        <label className='label-input-group' htmlFor='user_type'>
+                        <label className='label-input-group' htmlFor='Client'>
                             Trader
                             <input className='form-check-input'
                                 id='Trader'

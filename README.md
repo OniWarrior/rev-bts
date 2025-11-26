@@ -93,12 +93,12 @@ root
 | POST   | `/api/users/transfer-money`    | Transfer money to trader         |
 
 ### **User: Trader / Transaction Routes**
-| Method | Endpoint                 | Description                                                       |
-|--------|---------------------------|------------------------------------------------------------------|
+| Method | Endpoint                 | Description                                                 |
+|--------|---------------------------|--------------------------------------------------------------|
 
 | GET    | `/api/users/trader-portfolio`                | Retrieves portfolio                           |
-| POST   | `/api/users/buy-bitcoin`                     | Buy bitcoin  (behalf of client)               |
-| POST   | `/api/users/sell-bitcoin`                    | Sell bitcoin (behalf of client)               |
+| POST   | `/api/users/trader-buy-bitcoin`              | Buy bitcoin  (behalf of client)               |
+| POST   | `/api/users/trader-sell-bitcoin`             | Sell bitcoin (behalf of client)               |
 | POST   | `/api/users/clients/search`                  | Get client information                        |
 | GET    | `/api/users/cancel-log`                      | Retrieves cancel log                          |
 | GET    | `/api/users/clients/:client_id/transactions` | Retrieves orders made by clients              |

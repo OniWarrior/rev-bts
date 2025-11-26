@@ -124,7 +124,7 @@ The backend uses **Knex migrations and seeds** to create and populate tables.
 ### 1️⃣ Clone the Repository
 ```bash
 git clone <your-repo-url>
-cd bitcoin-transaction-system
+cd rev-bts
 
 ### 2️⃣ Install Frontend Dependencies
 cd rev-bts

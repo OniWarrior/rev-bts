@@ -49,30 +49,31 @@ This project demonstrates full-stack development, REST API architecture, authent
 
 ## 📂 Project Structure
 
- \`\`\`  
-- root
-│── frontend/ # React application
-│ │── src/
-| | ├── Assets/
-│ │ ├── components/
-| | ├── form-schemas/
-| | ├── hooks/
-│ │ ├── state/
-│ │ └── styles/
-│ └── package.json
+ ```
+root
+├── rev-bts/                  # React application
+│   ├── src/
+│   │   ├── Assets/
+│   │   ├── components/
+│   │   ├── form-schemas/
+│   │   ├── hooks/
+│   │   ├── state/
+│   │   └── styles/
+│   └── package.json
 │
-│── backend/ # Node.js + Express API
-│ │── api/
-│ │ ├── __tests__/
-│ │ ├── auth/
-│ │ ├── data/
-│ │ ├── secrets/
-│ │ └── users/
-│ ├── knexfile.js
-│ ├── package.json
-│ └── server.js
-└── README.md  
- \`\`\`
+├── bitcoin-transaction-system-be/                   # Node.js + Express API
+│   ├── api/
+│   │   ├── __tests__/
+│   │   ├── auth/
+│   │   ├── data/
+│   │   ├── secrets/
+│   │   └── users/
+│   ├── knexfile.js
+│   ├── package.json
+│   └── server.js
+│
+└── README.md
+```
 
 
 ---
@@ -127,11 +128,10 @@ git clone <your-repo-url>
 cd bitcoin-transaction-system
 
 ### 2️⃣ Install Frontend Dependencies
-cd frontend
+cd rev-bts
 npm install
 
 ### 3️⃣ Install Backend Dependencies
-cd ../backend
 npm install
 
 ### 4️⃣ Configure Environment Variables

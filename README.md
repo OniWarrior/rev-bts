@@ -48,6 +48,8 @@ This project demonstrates full-stack development, REST API architecture, authent
 ---
 
 ## 📂 Project Structure
+
+\`\`\` 
 root
 │── frontend/ # React application
 │ │── src/
@@ -70,6 +72,7 @@ root
 │ ├── package.json
 │ └── server.js
 └── README.md
+\`\`\`
 
 ---
 

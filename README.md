@@ -100,7 +100,6 @@ root
 ### **User: Trader / Transaction Routes**
 | Method | Endpoint                 | Description                                                 |
 |--------|---------------------------|--------------------------------------------------------------|
-
 | GET    | `/api/users/trader-portfolio`                | Retrieves portfolio                           |
 | POST   | `/api/users/trader-buy-bitcoin`              | Buy bitcoin  (behalf of client)               |
 | POST   | `/api/users/trader-sell-bitcoin`             | Sell bitcoin (behalf of client)               |

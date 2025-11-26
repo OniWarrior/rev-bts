@@ -72,7 +72,7 @@ This project demonstrates full-stack development, REST API architecture, authent
 │ ├── package.json
 │ └── server.js
 └── README.md  
-  \`\`\`
+ \`\`\`
 
 
 ---

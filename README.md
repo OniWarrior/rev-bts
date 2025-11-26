@@ -57,7 +57,6 @@ root
 | | ├── hooks/
 │ │ ├── state/
 │ │ └── styles/
-│ │ 
 │ └── package.json
 │
 │── backend/ # Node.js + Express API
@@ -70,7 +69,6 @@ root
 │ ├── knexfile.js
 │ ├── package.json
 │ └── server.js
-│
 └── README.md
 
 ---
@@ -95,8 +93,8 @@ root
 | POST   | `/api/users/transfer-money`    | Transfer money to trader         |
 
 ### **User: Trader / Transaction Routes**
-| Method | Endpoint                 | Description                      |
-|--------|---------------------------|----------------------------------|
+| Method | Endpoint                 | Description                                                       |
+|--------|---------------------------|------------------------------------------------------------------|
 
 | GET    | `/api/users/trader-portfolio`                | Retrieves portfolio                           |
 | POST   | `/api/users/buy-bitcoin`                     | Buy bitcoin  (behalf of client)               |

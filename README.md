@@ -48,8 +48,9 @@ This project demonstrates full-stack development, REST API architecture, authent
 ---
 
 ## 📂 Project Structure
-- \`\`\` 
-root
+
+ \`\`\`  
+- root
 │── frontend/ # React application
 │ │── src/
 | | ├── Assets/
@@ -70,8 +71,10 @@ root
 │ ├── knexfile.js
 │ ├── package.json
 │ └── server.js
-└── README.md
-- \`\`\`
+└── README.md  
+  
+  \`\`\`
+
 
 ---
 

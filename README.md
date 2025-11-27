@@ -168,19 +168,19 @@ npm run start
 ### 📬 Contact
 
 Stephen Aranda
-Email: aranda.stephen88@gmail.com
+**Email:** aranda.stephen88@gmail.com
+**LinkedIn:** www.linkedin.com/in/stephen-aranda-9b9974205
 
 
-LinkedIn: [![www.linkedin.com/in/stephen-aranda-9b9974205]](www.linkedin.com/in/stephen-aranda-9b9974205) 
 
 ### Bitcoin Transaction system README's
 
 project-frontend/
    rev-bts/README.md                        <-- Full project overview
-Link: [link to front end repo](https://github.com/OniWarrior/rev-bts)
+**Link:** https://github.com/OniWarrior/rev-bts
 
 project-backend/
    bitcoin-transaction-system-be/README.md  <-- Backend-only details
-Link: [link to backend end repo](https://github.com/OniWarrior/bitcoin-transaction-system-be)
+**Link:** https://github.com/OniWarrior/bitcoin-transaction-system-be
 
 

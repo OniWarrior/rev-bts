@@ -169,6 +169,7 @@ npm run start
 
 Stephen Aranda
 **Email:** aranda.stephen88@gmail.com
+<br>
 **LinkedIn:** www.linkedin.com/in/stephen-aranda-9b9974205
 
 
@@ -177,10 +178,12 @@ Stephen Aranda
 
 project-frontend/
    rev-bts/README.md                        <-- Full project overview
+<br>
 **Link:** https://github.com/OniWarrior/rev-bts
 
 project-backend/
    bitcoin-transaction-system-be/README.md  <-- Backend-only details
+<br>
 **Link:** https://github.com/OniWarrior/bitcoin-transaction-system-be
 
 

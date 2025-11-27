@@ -141,7 +141,7 @@ cd rev-bts<br>
 cd bitcoin-transaction-system-be
 
 ### 2️⃣ Install Frontend Dependencies
-cd rev-bts
+cd rev-bts <br>
 npm install
 
 ### 3️⃣ Install Backend Dependencies
@@ -168,7 +168,7 @@ CMC_API_KEY = your api key to retrieve latest price of bitcoin from coin market 
 npm run server
 
 ### 6️⃣ Run the Frontend
-cd ./rev-bts/
+cd ./rev-bts/ <br>
 npm run start
 
 ### 📬 Contact

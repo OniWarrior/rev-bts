@@ -171,7 +171,7 @@ Stephen Aranda
 Email: aranda.stephen88@gmail.com
 
 
-LinkedIn: [www.linkedin.com/in/stephen-aranda-9b9974205](url) 
+LinkedIn: [![www.linkedin.com/in/stephen-aranda-9b9974205]](www.linkedin.com/in/stephen-aranda-9b9974205) 
 
 ### Bitcoin Transaction system README's
 

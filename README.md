@@ -90,10 +90,10 @@ root
 | Method | Endpoint                 | Description                      |
 |--------|---------------------------|----------------------------------|
 | GET    | `/api/users/latest`            | Get current price of Bitcoin     |
-| POST   | `/api/users/portfolio`         | Retrieves portfolio              |
+| GET    | `/api/users/portfolio`         | Retrieves portfolio              |
 | GET    | `/api/users/orders`            | Retrieves orders made by user    |
-| GET    | `/api/users/buy-bitcoin`       | Buy bitcoin                      |
-| GET    | `/api/users/sell-bitcoin`      | Sell bitcoin                     |
+| POST   | `/api/users/buy-bitcoin`       | Buy bitcoin                      |
+| POST   | `/api/users/sell-bitcoin`      | Sell bitcoin                     |
 | GET    | `/api/users/bitcoin-wallet`    | Get user bitcoin wallet          |
 | POST   | `/api/users/transfer-money`    | Transfer money to trader         |
 

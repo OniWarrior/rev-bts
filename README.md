@@ -151,11 +151,17 @@ npm install
 
 Backend .env example:
 PORT=5000
+<br>
 NODE_ENV = development
+<br>
 DATABASE_URL=postgres://your-db-url
+<br>
 TESTING_DATABASE_URL = postgres://your-db-url
+<br>
 DEV_DATABASE_URL = postgres://your-db-url
+<br>
 JWT_SECRET=your-secret-key
+<br>
 CMC_API_KEY = your api key to retrieve latest price of bitcoin from coin market cap
 
 ### 5️⃣ Run the Backend

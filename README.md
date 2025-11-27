@@ -170,7 +170,8 @@ npm run start
 Stephen Aranda
 Email: aranda.stephen88@gmail.com
 
-LinkedIn: www.linkedin.com/in/stephen-aranda-9b9974205
+
+LinkedIn: [www.linkedin.com/in/stephen-aranda-9b9974205](url) 
 
 ### Bitcoin Transaction system README's
 

@@ -109,6 +109,14 @@ root
 | GET    | `/api/users/clients/:client_id/payments`     | Retrieves money transfers made by clients     |
 | PUT    | `/api/users/cancel-payment-or-transfer`      | Cancel order or money transfer made by client |
 
+### **Secret User: Manager (limited Admin type): Manager Routes**
+| Method | Endpoint                 | Description                      |
+|--------|---------------------------|----------------------------------|
+| POST   | `/api/users/daily`             | Get total number of daily transactions     |
+| POST   | `/api/users/weekly`            | Get total number of weekly transactions    |
+| POST   | `/api/users/monthly`           | Get total number of monthly                |
+
+
 
 
 All `/api/users/*` routes require a valid JWT.
@@ -168,8 +176,10 @@ LinkedIn: www.linkedin.com/in/stephen-aranda-9b9974205
 
 project-frontend/
    rev-bts/README.md                        <-- Full project overview
+Link: [link to front end repo](https://github.com/OniWarrior/rev-bts)
 
 project-backend/
    bitcoin-transaction-system-be/README.md  <-- Backend-only details
+Link: [link to backend end repo](https://github.com/OniWarrior/bitcoin-transaction-system-be)
 
 
